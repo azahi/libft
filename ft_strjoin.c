@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 17:09:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/09/07 16:22:51 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/09/25 01:22:24 by free             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,17 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
 	char	*str;
 
 	if (!s1 || !s2)
 		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return ((char *)s1);
 	if (!(str = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
 		return (NULL);
-	i = 0;
-	while (*s1)
-	{
-		str[i++] = *s1;
-		s1++;
-	}
-	while (*s2)
-	{
-		str[i++] = *s2;
-		s2++;
-	}
+	ft_strcpy(str, s1);
+	ft_strcat(str, (char *)s2);
 	return (str);
 }
