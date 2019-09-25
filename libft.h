@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 14:50:50 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/09/12 19:17:55 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/09/25 22:06:25 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,7 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strnlen(const char *s, size_t maxlen);
 char			*ft_strndup(const char *s1, size_t n);
 void			ft_strrev(char *str);
+
+int				ft_getline_fd(const int fd, char **line);
 
 #endif
