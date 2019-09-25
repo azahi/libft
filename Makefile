@@ -6,13 +6,13 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/09/12 16:58:18 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/09/25 15:32:57 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I includes
 SRC = \
 	ft_atoi.c		\
 	ft_bzero.c		\

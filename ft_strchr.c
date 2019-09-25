@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 14:03:11 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/09/19 16:42:13 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/09/24 15:50:54 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == '\0' && c == '\0')
+	if (!*s && !c)
 		return ((char *)s);
 	return (NULL);
 }
