@@ -6,13 +6,13 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/09/25 15:32:57 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/09/25 15:42:22 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I includes
+CFLAGS = -Wall -Wextra -Werror
 SRC = \
 	ft_atoi.c		\
 	ft_bzero.c		\
@@ -85,7 +85,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) $<
+	$(CC) -c $(CFLAGS) -I includes $<
 
 $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)
