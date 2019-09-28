@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 16:13:23 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/09/25 22:06:05 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/09/28 14:29:39 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char		*get_line(char **src)
 	return (str);
 }
 
-int				ft_get_next_line(const int fd, char **line)
+int				ft_getline_fd(const int fd, char **line)
 {
 	char			*content_tmp;
 	char			buf[BUFF_SIZE + 1];

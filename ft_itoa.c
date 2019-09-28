@@ -6,13 +6,13 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 19:46:47 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/09/07 20:06:03 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/09/28 14:44:40 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	stc_strleni(int n)
+static size_t	int_len(int n)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ char			*ft_itoa(int n)
 	size_t			len;
 	unsigned int	nn;
 
-	len = stc_strleni(n);
+	len = int_len(n);
 	nn = n;
 	if (n < 0)
 	{
