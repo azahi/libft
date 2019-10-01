@@ -6,14 +6,12 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 14:50:50 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/09/25 22:06:25 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/01 15:28:46 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# include <config.h>
 
 # include <stdlib.h>
 # include <string.h>
