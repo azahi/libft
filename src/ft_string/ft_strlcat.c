@@ -6,37 +6,37 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 20:23:23 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 13:10:00 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/19 23:44:05 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include <ft_string.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	const char	*odst;
-	const char	*osrc;
-	size_t		dlen;
-	size_t		n;
+	char	*td;
+	char	*ts;
+	size_t	dsize;
+	size_t	i;
 
-	odst = dst;
-	osrc = src;
-	n = dsize;
-	while (n-- != 0 && *dst != '\0')
+	td = (char *)dst;
+	ts = (char *)src;
+	i = size;
+	while (i-- && *dst != '\0')
 		dst++;
-	dlen = dst - odst;
-	n = dsize - dlen;
-	if (n-- == 0)
-		return (dlen + strlen(src));
+	dsize = dst - td;
+	i = size - dsize;
+	if (!i--)
+		return (dsize + ft_strlen(src));
 	while (*src != '\0')
 	{
-		if (n != 0)
+		if (i)
 		{
 			*dst++ = *src;
-			n--;
+			i--;
 		}
 		src++;
 	}
 	*dst = '\0';
-	return(dlen + (src - osrc));
+	return (dsize + (src - ts));
 }

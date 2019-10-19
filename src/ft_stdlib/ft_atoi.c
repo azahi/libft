@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 19:39:16 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 14:50:56 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/19 23:35:35 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,3 @@ int	ft_atoi(const char *str)
 {
 	return (ft_strtol(str, (const char **)NULL, 10));
 }
-

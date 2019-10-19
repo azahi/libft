@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 00:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 15:16:48 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:36:02 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 #define STEP tmp =*fp++,*tp++ = *fp++,*tp++ = tmp
 
-void	ft_swab(const void *from, void *to, size_t len)
+void	ft_swab(const void *src, void *dst, size_t size)
 {
 	char			*tp;
 	unsigned long	tmp;
 	char			*fp;
 	int				n;
 
-	if (len <= 0)
+	if (size <= 0)
 		return ;
-	n = len >> 1;
-	fp = (char *)from;
-	tp = (char *)to;
+	n = size >> 1;
+	fp = (char *)src;
+	tp = (char *)dst;
 	while (n & 0x7)
 		STEP;
 	n >>= 3;

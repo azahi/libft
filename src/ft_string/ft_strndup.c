@@ -6,22 +6,22 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 18:09:04 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 15:12:52 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/19 23:45:30 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
 #include <ft_stdlib.h>
+#include <ft_string.h>
 
-char	*ft_strndup(const char *str, size_t maxlen)
+char	*ft_strndup(const char *str, size_t maxsize)
 {
 	char	*copy;
-	size_t	len;
+	size_t	size;
 
-	len = ft_strnlen(str, maxlen);
-	if (!(copy = malloc(len + 1)))
+	size = ft_strnlen(str, maxsize);
+	if (!(copy = malloc(size + 1)))
 		return (NULL);
-	ft_memcpy(copy, str, len);
-	copy[len] = '\0';
+	ft_memcpy(copy, str, size);
+	copy[size] = '\0';
 	return (copy);
 }

@@ -6,23 +6,23 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 00:45:32 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 15:16:29 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:34:54 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-size_t	ft_strxfrm(char *dst, const char *src, size_t n)
+size_t	ft_strxfrm(char *dst, const char *src, size_t size)
 {
-	size_t srclen;
-	size_t copysize;
+	size_t	sizes;
+	size_t	sizec;
 
-	srclen = ft_strlen(src);
-	if (n)
+	sizes = ft_strlen(src);
+	if (size)
 	{
-		copysize = srclen < n ? srclen : n - 1;
-		ft_memcpy(dst, src, copysize);
-		dst[copysize] = 0;
+		sizec = sizes < size ? sizes : size - 1;
+		ft_memcpy(dst, src, sizec);
+		dst[sizec] = 0;
 	}
-	return (srclen);
+	return (sizes);
 }

@@ -6,24 +6,22 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 23:25:26 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 15:13:24 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:33:16 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <ft_string.h>
 
-char	*ft_strpbrk(const char *p, const char *s)
+char	*ft_strpbrk(const char *str, const char *charset)
 {
-	const char	*scanp;
-	int			c;
-	int			sc;
+	int	c;
+	int	sc;
 
-	while ((c = *p++))
+	while ((c = *str++))
 	{
-		scanp = s;
-		while ((sc = *scanp++) != '\0')
+		while ((sc = *charset++) != '\0')
 			if (sc == c)
-				return ((char *)(p - 1));
+				return ((char *)(str - 1));
 	}
 	return (NULL);
 }

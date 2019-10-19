@@ -6,34 +6,13 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 15:58:52 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 14:56:19 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/19 23:42:20 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <ft_string.h>
 
-void	*ft_memcpy(void *src0, const void *dst0, size_t length)
+void	*ft_memcpy(void *dst, const void *src, size_t size)
 {
-	char	*dst;
-	char	*src;
-
-	if (length || dst0 != src0)
-	{
-		dst = (char *)dst0;
-		src = (char *)src0;
-		if (((size_t)dst < (size_t)src) &&
-			((size_t)dst < (size_t)src + length))
-		{
-			src += length;
-			dst += length;
-			while (length--)
-				*--dst = *--src;
-		}
-		else
-		{
-			while (length--)
-				*dst++ = *src++;
-		}
-	}
-	return ((char *)dst0);
+	return (ft_memmove(dst, src, size));
 }

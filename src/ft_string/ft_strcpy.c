@@ -6,18 +6,16 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 19:43:51 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 15:02:53 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:29:43 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
-
-char	*ft_strcpy(char *to, const char *from)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	char	*save;
 
-	save = to;
-	while ((*to++ = *from++) != '\0')
+	save = dst;
+	while ((*dst++ = *src++) != '\0')
 		;
 	return (save);
 }

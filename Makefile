@@ -6,7 +6,7 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/10/19 15:19:55 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/10/20 00:37:55 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -79,13 +79,11 @@ _SRC_FT_STRING = \
 	ft_memrchr.c \
 	ft_memset.c \
 	ft_strcasecmp.c \
-	ft_strcasestr.c \
 	ft_strcat.c \
 	ft_strchr.c \
 	ft_strchrnul.c \
 	ft_strcmp.c \
 	ft_strcpy.c \
-	ft_strcspn.c \
 	ft_strdup.c \
 	ft_strlcat.c \
 	ft_strlcpy.c \
@@ -99,7 +97,6 @@ _SRC_FT_STRING = \
 	ft_strnstr.c \
 	ft_strpbrk.c \
 	ft_strrchr.c \
-	ft_strspn.c \
 	ft_strstr.c \
 	ft_strxfrm.c \
 	ft_swab.c
@@ -119,10 +116,10 @@ $(TARGET): $(OBJ)
 all: $(TARGET)
 
 clean:
-	/bin/rm --force $(OBJ)
+	/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm --force $(TARGET)
+	/bin/rm -f $(TARGET)
 
 re: fclean all
 

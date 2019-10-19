@@ -6,22 +6,22 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 21:43:41 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 15:00:10 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:19:37 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memrchr(const void *s, int c, size_t n)
+void	*ft_memrchr(const void *str, int ch, size_t size)
 {
 	const unsigned char *cp;
 
-	if (n != 0) {
-		cp = (unsigned char *)s + n;
-		do {
-			if (*(--cp) == (unsigned char)c)
+	if (size)
+	{
+		cp = (unsigned char *)str + size;
+		while (size--)
+			if (*(--cp) == (unsigned char)ch)
 				return ((void *)cp);
-		} while (--n != 0);
 	}
 	return (NULL);
 }

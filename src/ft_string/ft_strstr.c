@@ -6,27 +6,30 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 15:01:36 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 15:15:46 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:22:56 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-char	*ft_strstr(const char *s, const char *find)
+char	*ft_strstr(const char *str, const char *find)
 {
 	char	c;
 	char	sc;
-	size_t	len;
+	size_t	sizef;
 
-	if ((c = *find++) != 0) {
-		len = ft_strlen(find);
-		do {
-			do {
-				if ((sc = *s++) == 0)
+	if ((c = *find++) != '\0')
+	{
+		sizef = ft_strlen(find);
+		while (ft_strncmp(str, find, sizef))
+		{
+			if ((sc = *str++) == '\0')
+				return (NULL);
+			while (sc != c)
+				if ((sc = *str++) == '\0')
 					return (NULL);
-			} while (sc != c);
-		} while (ft_strncmp(s, find, len) != 0);
-		s--;
+		}
+		str--;
 	}
-	return ((char *)s);
+	return ((char *)str);
 }

@@ -6,18 +6,18 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 14:56:54 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 01:09:28 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:28:02 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
-void	*ft_memset(void *b, int c, size_t n)
+void	*ft_memset(void *str, int ch, size_t size)
 {
-	char	*tmp;
+	char	*ts;
 
-	tmp = b;
-	while (n-- > 0)
-		*tmp++ = c;
-	return (b);
+	ts = str;
+	while (size-- > 0)
+		*ts++ = ch;
+	return (str);
 }

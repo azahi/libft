@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 13:18:09 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:21:11 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
 
 char	*ft_strcat(char *s1, const char *s2);
-char	*strncat(char *dst, const char *src, size_t n);
+char	*ft_strncat(char *dst, const char *src, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t dsize);
 
 size_t	ft_strlen(const char *str);
@@ -48,7 +48,6 @@ char	*ft_strchrnul(const char *p, int ch);
 
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *s, const char *find, size_t slen);
-char	*ft_strcasestr(const char *s, const char *find);
 
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -60,9 +59,6 @@ char	*ft_strdup(const char *s1);
 char	*ft_strndup(const char *s1, size_t maxlen);
 
 char	*ft_strpbrk(const char *p, const char *s);
-
-size_t	ft_strspn(const char *s1, const char *s2);
-size_t	ft_strcspn(const char *s1, const char *s2);
 
 size_t	ft_strxfrm(char *dst, const char *src, size_t n);
 

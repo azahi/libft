@@ -6,35 +6,31 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 16:17:10 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 14:59:34 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:36:30 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
-void	*ft_memmove(void *dst0, const void *src0, size_t length)
+void	*ft_memmove(void *dst, const void *src, size_t size)
 {
-	char	*dst;
-	char	*src;
+	char	*td;
+	char	*ts;
 
-	if (length || dst0 != src0)
+	if (!size || dst != src)
 	{
-		dst = (char *)dst0;
-		src = (char *)src0;
-		if (((size_t)dst < (size_t)src) &&
-			((size_t)dst < (size_t)src + length))
-		{
-			src += length;
-			dst += length;
-			while (length--)
-				*--dst = *--src;
-		}
+		td = (char *)dst;
+		ts = (char *)src;
+		if ((size_t)td < (size_t)ts && (size_t)td < (size_t)ts + size)
+			while (size--)
+				*td++ = *ts++;
 		else
 		{
-			while (length--)
-				*dst++ = *src++;
+			td += size;
+			ts += size;
+			while (size--)
+				*--td = *--ts;
 		}
 	}
-	return ((char *)dst0);
-
+	return (dst);
 }
