@@ -1,14 +1,21 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    .gitignore                                         :+:      :+:    :+:    #
+#    .editorconfig                                      :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/17 23:54:09 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/10/19 12:21:57 by jdeathlo         ###   ########.fr        #
+#    Created: 2019/10/17 23:54:17 by jdeathlo          #+#    #+#              #
+#    Updated: 2019/10/17 23:54:18 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-*.a
-*.o
+root = false
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = tab
+insert_final_newline = true
+trim_trailing_whitespace = true

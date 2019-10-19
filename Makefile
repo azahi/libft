@@ -6,97 +6,123 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/09/25 22:06:54 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/10/19 15:19:55 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-SRC = \
-	ft_atoi.c		\
-	ft_bzero.c		\
-	ft_getline_fd.c	\
-	ft_isalnum.c	\
-	ft_isalpha.c	\
-	ft_isascii.c	\
-	ft_isdigit.c	\
-	ft_islower.c	\
-	ft_isprint.c	\
-	ft_isspace.c	\
-	ft_isupper.c	\
-	ft_isxdigit.c	\
-	ft_itoa.c		\
-	ft_lstadd.c		\
-	ft_lstdel.c		\
-	ft_lstdelone.c	\
-	ft_lstiter.c	\
-	ft_lstmap.c		\
-	ft_lstnew.c		\
-	ft_memalloc.c	\
-	ft_memccpy.c	\
-	ft_memchr.c		\
-	ft_memcmp.c		\
-	ft_memcpy.c		\
-	ft_memdel.c		\
-	ft_memmove.c	\
-	ft_memset.c		\
-	ft_putchar.c	\
-	ft_putchar_fd.c	\
-	ft_putendl.c	\
-	ft_putendl_fd.c	\
-	ft_putnbr.c		\
-	ft_putnbr_fd.c	\
-	ft_putstr.c		\
-	ft_putstr_fd.c	\
-	ft_strcat.c		\
-	ft_strchr.c		\
-	ft_strclr.c		\
-	ft_strcmp.c		\
-	ft_strcpy.c		\
-	ft_strdel.c		\
-	ft_strdup.c		\
-	ft_strequ.c		\
-	ft_striter.c	\
-	ft_striteri.c	\
-	ft_strjoin.c	\
-	ft_strlcat.c	\
-	ft_strlcpy.c	\
-	ft_strlen.c		\
-	ft_strmap.c		\
-	ft_strmapi.c	\
-	ft_strncat.c	\
-	ft_strncmp.c	\
-	ft_strncpy.c	\
-	ft_strndup.c	\
-	ft_strnequ.c	\
-	ft_strnew.c		\
-	ft_strnlen.c	\
-	ft_strnstr.c	\
-	ft_strrchr.c	\
-	ft_strrev.c		\
-	ft_strsplit.c	\
-	ft_strstr.c		\
-	ft_strsub.c		\
-	ft_strtrim.c	\
-	ft_tolower.c	\
+TARGET = libft.a
+
+AR = ar
+CC = cc
+CFLAGS = -std=c99 -Wall -Werror -Wextra
+
+INCDIR = include/
+_INC = \
+	ft_ctype.h \
+	ft_stdio.h \
+	ft_stdlib.h \
+	ft_string.h
+INC = $(addprefix $(INCDIR), $(_INC))
+
+SRCDIR = src/
+_SRCDIR_FT_CTYPE = ft_ctype/
+_SRC_FT_CTYPE = \
+	ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isblank.c \
+	ft_iscntrl.c \
+	ft_isdigit.c \
+	ft_isgraph.c \
+	ft_islower.c \
+	ft_isprint.c \
+	ft_ispunct.c \
+	ft_isspace.c \
+	ft_isupper.c \
+	ft_isxdigit.c \
+	ft_tolower.c \
 	ft_toupper.c
+_SRCDIR_FT_STDIO = ft_stdio/
+_SRC_FT_STDIO = \
+	ft_putchar.c \
+	ft_puts.c
+_SRCDIR_FT_STDLIB = ft_stdlib/
+_SRC_FT_STDLIB = \
+	ft_a64l.c \
+	ft_abs.c \
+	ft_atoi.c \
+	ft_atol.c \
+	ft_atoll.c \
+	ft_calloc.c \
+	ft_div.c \
+	ft_l64a.c \
+	ft_l64a_r.c \
+	ft_labs.c \
+	ft_ldiv.c \
+	ft_llabs.c \
+	ft_lldiv.c \
+	ft_strtol.c \
+	ft_strtoll.c
+_SRCDIR_FT_STRING = ft_string/
+_SRC_FT_STRING = \
+	ft_ffs.c \
+	ft_ffsl.c \
+	ft_ffsll.c \
+	ft_fls.c \
+	ft_flsl.c \
+	ft_flsll.c \
+	ft_memccpy.c \
+	ft_memchr.c \
+	ft_memcmp.c \
+	ft_memcpy.c \
+	ft_memmove.c \
+	ft_memrchr.c \
+	ft_memset.c \
+	ft_strcasecmp.c \
+	ft_strcasestr.c \
+	ft_strcat.c \
+	ft_strchr.c \
+	ft_strchrnul.c \
+	ft_strcmp.c \
+	ft_strcpy.c \
+	ft_strcspn.c \
+	ft_strdup.c \
+	ft_strlcat.c \
+	ft_strlcpy.c \
+	ft_strlen.c \
+	ft_strncasecmp.c \
+	ft_strncat.c \
+	ft_strncmp.c \
+	ft_strncpy.c \
+	ft_strndup.c \
+	ft_strnlen.c \
+	ft_strnstr.c \
+	ft_strpbrk.c \
+	ft_strrchr.c \
+	ft_strspn.c \
+	ft_strstr.c \
+	ft_strxfrm.c \
+	ft_swab.c
+SRC += $(addprefix $(SRCDIR), $(addprefix $(_SRCDIR_FT_CTYPE), $(_SRC_FT_CTYPE)))
+SRC += $(addprefix $(SRCDIR), $(addprefix $(_SRCDIR_FT_STDIO), $(_SRC_FT_STDIO)))
+SRC += $(addprefix $(SRCDIR), $(addprefix $(_SRCDIR_FT_STDLIB), $(_SRC_FT_STDLIB)))
+SRC += $(addprefix $(SRCDIR), $(addprefix $(_SRCDIR_FT_STRING), $(_SRC_FT_STRING)))
+
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
-
 %.o: %.c
-	$(CC) -c $(CFLAGS) -I includes $<
+	$(CC) $(CFLAGS) -I $(INCDIR) -o $@ -c $<
 
-$(NAME): $(OBJ)
-	ar -rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(TARGET): $(OBJ)
+	$(AR) rucs $(TARGET) $(OBJ)
+
+all: $(TARGET)
 
 clean:
-	rm -f $(OBJ)
+	/bin/rm --force $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	/bin/rm --force $(TARGET)
 
 re: fclean all
 
