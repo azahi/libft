@@ -6,18 +6,15 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 23:33:25 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 00:28:58 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:45:27 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchrnul(const char *str, int ch)
 {
-	char c;
-
-	c = ch;
 	while (1)
 	{
-		if (*str == c || *str == '\0')
+		if (*str == ch || *str == '\0')
 			return ((char *)str);
 		str++;
 	}

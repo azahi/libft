@@ -6,23 +6,23 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 15:36:57 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 00:31:41 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:21:06 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
-size_t	ft_strnlen(const char *str, size_t maxsize)
+size_t	ft_strnlen(const char *str, size_t size)
 {
-	size_t	size;
+	size_t	ssize;
 
-	size = 0;
-	while (size < maxsize)
+	ssize = 0;
+	while (ssize < size)
 	{
 		if (!*str)
 			break ;
-		size++;
+		ssize++;
 		str++;
 	}
-	return (size);
+	return (ssize);
 }

@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_l64a_r.c                                        :+:      :+:    :+:   */
+/*   ft_strupr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 11:51:07 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 23:55:06 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/10/20 19:08:58 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/10/20 20:18:47 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
+#include <ft_ctype.h>
 
-#define LIST "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-
-static const char	g_chars[] = LIST;
-
-int					ft_l64a_r(long value, char *buffer, int buflen)
+char	*ft_strupr(const char *str)
 {
-	uint32_t	v;
+	char	*ts;
 
-	v = value;
-	while (buflen-- > 0)
+	ts = (char *)str;
+	while (*ts)
 	{
-		if (!v)
-		{
-			*buffer = '\0';
-			return (0);
-		}
-		*buffer++ = g_chars[v & 0x3f];
-		v >>= 6;
+		*ts = ft_toupper(*ts);
+		ts++;
 	}
-	return (-1);
+	return ((char *)str);
 }

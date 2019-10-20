@@ -6,23 +6,23 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 13:59:39 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 00:30:33 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:19:26 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 char	*ft_strncpy(char *dst, const char *src, size_t size)
 {
-	char	*d;
+	char	*td;
 
-	d = dst;
+	td = dst;
 	while (size--)
 	{
-		if ((*d++ = *(char *)src++) == '\0')
+		if ((*td++ = *(char *)src++) == '\0')
 		{
 			while (--size)
-				*d++ = '\0';
+				*td++ = '\0';
 			break ;
 		}
 	}

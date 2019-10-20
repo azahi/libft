@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 00:45:32 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 00:34:54 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:33:18 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 size_t	ft_strxfrm(char *dst, const char *src, size_t size)
 {
-	size_t	sizes;
-	size_t	sizec;
+	size_t	ssize;
+	size_t	csize;
 
-	sizes = ft_strlen(src);
+	ssize = ft_strlen(src);
 	if (size)
 	{
-		sizec = sizes < size ? sizes : size - 1;
-		ft_memcpy(dst, src, sizec);
-		dst[sizec] = 0;
+		csize = ssize < size ? ssize : size - 1;
+		ft_memcpy(dst, src, csize);
+		dst[csize] = 0;
 	}
-	return (sizes);
+	return (ssize);
 }

@@ -6,21 +6,20 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 00:08:54 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 12:26:46 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:52:25 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdio.h>
-#include <stddef.h>
 
-int	ft_puts(const char *s)
+int	ft_puts(const char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (*s)
+	while (*str)
 	{
-		ft_putchar(*s++);
+		ft_putchar(*str++);
 		i++;
 	}
 	ft_putchar('\n');

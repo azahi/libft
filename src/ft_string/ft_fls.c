@@ -6,13 +6,13 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 21:29:24 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 01:11:54 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:47:35 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_fls(int mask)
 {
-	int bit;
+	int	bit;
 
 	if (!mask)
 		return (0);

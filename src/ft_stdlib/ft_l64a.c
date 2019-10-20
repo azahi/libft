@@ -6,17 +6,36 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:53:18 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 12:50:58 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 21:06:15 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdlib.h>
-#include <stdint.h>
 
-char	*ft_l64a(long value)
+#define LIST "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+#define BUF_SIZE 7
+
+static const char	g_chars[] = LIST;
+
+char				*ft_l64a(long val)
 {
-	static char buf[7];
+	int			bsize;
+	int			i;
+	static char	buf[BUF_SIZE];
+	uint32_t	v;
 
-	ft_l64a_r(value, buf, sizeof(buf));
+	bsize = BUF_SIZE;
+	i = 0;
+	v = val;
+	while (bsize-- > 0)
+	{
+		if (!v)
+		{
+			*buf = '\0';
+			return (0);
+		}
+		buf[i++] = g_chars[v & 0x3f];
+		v >>= 6;
+	}
 	return (buf);
 }

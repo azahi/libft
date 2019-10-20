@@ -6,12 +6,9 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:43:48 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 14:49:44 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 19:59:58 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include <inttypes.h>
 
 long	ft_a64l(const char *str)
 {

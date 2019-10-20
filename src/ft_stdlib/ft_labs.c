@@ -6,11 +6,11 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:54:14 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 11:55:25 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:15:19 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_labs(long j)
+long	ft_labs(long num)
 {
-	return (j < 0 ? -j : j);
+	return (num < 0 ? -num : num);
 }

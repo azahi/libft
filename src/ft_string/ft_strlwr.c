@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlwr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 14:34:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:39:52 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/10/20 19:08:58 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/10/20 21:21:04 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#include <ft_ctype.h>
 
-char	*ft_strnstr(const char *str, const char *find, size_t size)
+char	*ft_strlwr(const char *str)
 {
-	char	fch;
-	char	sch;
-	size_t	fsize;
+	char	*ts;
 
-	if ((fch = *find++) != '\0')
+	ts = (char *)str;
+	while (*ts)
 	{
-		fsize = ft_strlen(find);
-		while (ft_strncmp(str, find, fsize))
-		{
-			if ((sch = *str++) == '\0' || size-- < 1)
-				return (NULL);
-			while (sch != fch)
-				if ((sch = *str++) == '\0' || size-- < 1)
-					return (NULL);
-			if (fsize > size)
-				return (NULL);
-		}
-		str--;
+		*ts = ft_tolower(*ts);
+		ts++;
 	}
 	return ((char *)str);
 }

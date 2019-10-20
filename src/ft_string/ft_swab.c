@@ -6,26 +6,26 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 00:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 00:36:02 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:23:22 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-#define STEP tmp =*fp++,*tp++ = *fp++,*tp++ = tmp
+#define STEP tmp =*ts++,*td++ = *ts++,*td++ = tmp
 
 void	ft_swab(const void *src, void *dst, size_t size)
 {
-	char			*tp;
-	unsigned long	tmp;
-	char			*fp;
+	char			*td;
+	char			*ts;
 	int				n;
+	unsigned long	tmp;
 
 	if (size <= 0)
 		return ;
 	n = size >> 1;
-	fp = (char *)src;
-	tp = (char *)dst;
+	ts = (char *)src;
+	td = (char *)dst;
 	while (n & 0x7)
 		STEP;
 	n >>= 3;

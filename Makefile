@@ -6,7 +6,7 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/10/20 03:19:51 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/10/20 21:20:16 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -42,12 +42,14 @@ _SRC_FT_CTYPE = \
 	ft_toupper.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_CTYPE), $(_SRC_FT_CTYPE)))
+
 _SRCDIR_FT_STDIO := ft_stdio/
 _SRC_FT_STDIO := \
 	ft_putchar.c \
 	ft_puts.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STDIO), $(_SRC_FT_STDIO)))
+
 _SRCDIR_FT_STDLIB := ft_stdlib/
 _SRC_FT_STDLIB := \
 	ft_a64l.c \
@@ -58,7 +60,6 @@ _SRC_FT_STDLIB := \
 	ft_calloc.c \
 	ft_div.c \
 	ft_l64a.c \
-	ft_l64a_r.c \
 	ft_labs.c \
 	ft_ldiv.c \
 	ft_llabs.c \
@@ -67,6 +68,7 @@ _SRC_FT_STDLIB := \
 	ft_strtoll.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STDLIB), $(_SRC_FT_STDLIB)))
+
 _SRCDIR_FT_STRING := ft_string/
 _SRC_FT_STRING := \
 	ft_ffs.c \
@@ -89,9 +91,11 @@ _SRC_FT_STRING := \
 	ft_strcmp.c \
 	ft_strcpy.c \
 	ft_strdup.c \
+	ft_strjoin.c \
 	ft_strlcat.c \
 	ft_strlcpy.c \
 	ft_strlen.c \
+	ft_strlwr.c \
 	ft_strncasecmp.c \
 	ft_strncat.c \
 	ft_strncmp.c \
@@ -102,6 +106,7 @@ _SRC_FT_STRING := \
 	ft_strpbrk.c \
 	ft_strrchr.c \
 	ft_strstr.c \
+	ft_strupr.c \
 	ft_strxfrm.c \
 	ft_swab.c
 SRC += $(addprefix $(SRCDIR), \

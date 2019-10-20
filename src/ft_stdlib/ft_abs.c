@@ -6,11 +6,11 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:32:30 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 12:42:51 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:14:05 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_abs(int j)
+int	ft_abs(int num)
 {
-	return (j < 0 ? -j : j);
+	return (num < 0 ? -num : num);
 }

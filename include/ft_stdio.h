@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:01 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 12:31:59 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 20:53:19 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 
-int		ft_puts(const char *s);
-void	ft_putchar(int c);
+int		ft_puts(const char *str);
+void	ft_putchar(int ch);
 
 #endif

@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lldiv.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 11:54:49 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:51:55 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/09/05 17:09:15 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/10/20 20:49:06 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdlib.h>
+#include <ft_string.h>
 
-lldiv_t	ft_lldiv(long num, long denom)
+char	*ft_strjoin(const char *str1, const char *str2)
 {
-	lldiv_t	r;
+	char	*str3;
 
-	r.quot = num / denom;
-	r.rem = num % denom;
-	if (num >= 0 && r.rem < 0)
-	{
-		r.quot++;
-		r.rem -= denom;
-	}
-	return (r);
+	if (!str1 && !str2)
+		return (NULL);
+	if (!str1)
+		return (ft_strdup(str2));
+	if (!str2)
+		return (ft_strdup(str1));
+	if (!(str3 = malloc(sizeof(*str3) *
+			(ft_strlen(str1) + ft_strlen(str2) + 1))))
+		return (NULL);
+	ft_strcpy(str3, (char *)str1);
+	ft_strcat(str3, (char *)str2);
+	return (str3);
 }
