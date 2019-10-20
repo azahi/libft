@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 16:04:51 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 20:44:02 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/10/20 02:40:37 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 void	*ft_memccpy(void *dst, const void *src, int ch, size_t size)
 {
+	unsigned char	*td;
+	unsigned char	*ts;
+
+	td = (unsigned char *)dst;
+	ts = (unsigned char *)src;
 	while (size--)
-		if ((*(unsigned char *)dst++ = *(unsigned char *)src++) ==
-				(unsigned char)ch)
-			return (dst);
+		if ((*td++ = *ts++) == (unsigned char)ch)
+			return (td);
 	return (NULL);
 }
