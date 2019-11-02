@@ -6,22 +6,14 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 00:08:54 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:52:25 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/02 17:09:36 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stdio.h>
+#include <ft_string.h>
+#include <unistd.h>
 
 int	ft_puts(const char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (*str)
-	{
-		ft_putchar(*str++);
-		i++;
-	}
-	ft_putchar('\n');
-	return (++i);
+	return (write(1, str, ft_strlen(str)));
 }
