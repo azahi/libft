@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 02:35:32 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/10 02:53:38 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	*ft_memset(void *str, int ch, size_t size);
 void	ft_bcopy(const void *s1, void *s2, size_t size);
 void	ft_bzero(void *str, size_t size);
 void	ft_swab(const void *src, void *dst, size_t size);
+void    *ft_mempcpy(void *dst, const void *src, size_t size);
 
 #endif
