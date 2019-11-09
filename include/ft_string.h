@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 02:31:59 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/10 02:35:32 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string.h>
 
+char	*ft_index(const char *str, int ch);
+char	*ft_rindex(const char *str, int ch);
 char	*ft_strcat(char *dst, const char *src);
 char	*ft_strchr(const char *str, int ch);
 char	*ft_strchrnul(const char *str, int ch);
