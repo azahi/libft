@@ -6,7 +6,7 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/10/20 21:20:16 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/11/10 02:32:30 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -71,6 +71,9 @@ SRC += $(addprefix $(SRCDIR), \
 
 _SRCDIR_FT_STRING := ft_string/
 _SRC_FT_STRING := \
+	ft_bcmp.c \
+	ft_bcopy.c \
+	ft_bzero.c \
 	ft_ffs.c \
 	ft_ffsl.c \
 	ft_ffsll.c \
