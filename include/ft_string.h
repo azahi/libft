@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 02:53:38 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/10 03:29:29 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 char	*ft_index(const char *str, int ch);
 char	*ft_rindex(const char *str, int ch);
+char	*ft_stpcpy(char *dst, const char *src);
+char	*ft_stpncpy(char *dst, const char *src, size_t size);
 char	*ft_strcat(char *dst, const char *src);
 char	*ft_strchr(const char *str, int ch);
 char	*ft_strchrnul(const char *str, int ch);
@@ -32,6 +34,7 @@ char	*ft_strpbrk(const char *str, const char *charset);
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strstr(const char *str, const char *find);
 char	*ft_strupr(const char *str);
+char    *ft_strcasestr(const char *str, const char *find);
 int		ft_bcmp(const void *s1, const void *s2, size_t size);
 int		ft_ffs(int mask);
 int		ft_ffsl(long mask);
@@ -44,10 +47,12 @@ int		ft_strcasecmp(const char *str1, const char *str2);
 int		ft_strcmp(const char *str1, const char *str2);
 int		ft_strncasecmp(const char *str1, const char *str2, size_t size);
 int		ft_strncmp(const char *str1, const char *str2, size_t size);
+size_t	ft_strcspn(const char *str, const char *reject);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 size_t	ft_strnlen(const char *str, size_t size);
+size_t	ft_strspn(const char *str, const char *accept);
 size_t	ft_strxfrm(char *dst, const char *src, size_t size);
 void	*ft_memccpy(void *dst, const void *src, int ch, size_t size);
 void	*ft_memchr(const void *str, int ch, size_t size);

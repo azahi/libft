@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strcasestr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 21:43:41 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 02:58:03 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 03:16:10 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 03:19:40 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ft_string.h>
 
-void	*ft_memrchr(const void *str, int ch, size_t size)
+char	*ft_strcasestr(const char *str, const char *find)
 {
-	unsigned char	*ts;
-
-	/*
-	if (size)
+	while (*str)
 	{
-		ts = (unsigned char *)str + size;
-		while (size--)
-			if (*(--ts) == (unsigned char)ch)
-				return ((void *)ts);
+		if (!ft_strncasecmp(str, find, ft_strlen(find)))
+			return ((char *)str);
+		str++;
 	}
-	*/
-	// TODO Test
-	ts = (unsigned char *)str;
-	while (size--)
-		if (ts[size] == ch)
-			return ((void *)(ts + size));
 	return (NULL);
 }

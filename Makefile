@@ -6,7 +6,7 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/11/10 02:54:04 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/11/10 03:29:00 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -90,12 +90,16 @@ _SRC_FT_STRING := \
 	ft_memrchr.c \
 	ft_memset.c \
 	ft_rindex.c \
+	ft_stpcpy.c \
+	ft_stpncpy.c \
 	ft_strcasecmp.c \
+	ft_strcasestr.c \
 	ft_strcat.c \
 	ft_strchr.c \
 	ft_strchrnul.c \
 	ft_strcmp.c \
 	ft_strcpy.c \
+	ft_strcspn.c \
 	ft_strdup.c \
 	ft_strjoin.c \
 	ft_strlcat.c \
@@ -111,6 +115,7 @@ _SRC_FT_STRING := \
 	ft_strnstr.c \
 	ft_strpbrk.c \
 	ft_strrchr.c \
+	ft_strspn.c \
 	ft_strstr.c \
 	ft_strupr.c \
 	ft_strxfrm.c \

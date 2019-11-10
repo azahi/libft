@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memrchr.c                                       :+:      :+:    :+:   */
+/*   ft_stpcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 21:43:41 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 02:58:03 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 03:10:23 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 03:14:17 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memrchr(const void *str, int ch, size_t size)
+char	*ft_stpcpy(char *dst, const char *src)
 {
-	unsigned char	*ts;
-
-	/*
-	if (size)
-	{
-		ts = (unsigned char *)str + size;
-		while (size--)
-			if (*(--ts) == (unsigned char)ch)
-				return ((void *)ts);
-	}
-	*/
-	// TODO Test
-	ts = (unsigned char *)str;
-	while (size--)
-		if (ts[size] == ch)
-			return ((void *)(ts + size));
-	return (NULL);
+	while ((*dst++ = *src++))
+		;
+	return (dst);
 }
