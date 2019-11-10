@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcmp.c                                          :+:      :+:    :+:   */
+/*   ft_strsep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:27:42 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:34 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 13:40:46 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 13:42:40 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-int	ft_bcmp(const void *str1, const void *str2, size_t size)
+char *ft_strsep(char **str, const char *sep)
 {
-	return (ft_memcmp(str1, str2, size));
+	char *ts;
+	char *end;
+
+	ts = *str;
+	if (!ts)
+		return NULL;
+	end = ts + ft_strcspn(ts, sep);
+	if (*end)
+		*end++ = '\0';
+	else
+		end = '\0';
+	*str = end;
+	return (ts);
 }

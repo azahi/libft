@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcmp.c                                          :+:      :+:    :+:   */
+/*   ft_chdir.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:27:42 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:34 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 15:11:19 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 16:50:04 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#include <ft_unistd.h>
+#include <syscall.h>
 
-int	ft_bcmp(const void *str1, const void *str2, size_t size)
+int	ft_chdir(const char *path)
 {
-	return (ft_memcmp(str1, str2, size));
+	return (syscall(SYS_chdir, path));
 }

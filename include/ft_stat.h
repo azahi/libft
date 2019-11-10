@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcmp.c                                          :+:      :+:    :+:   */
+/*   ft_stat.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:27:42 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:34 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 15:45:22 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 16:46:39 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#ifndef FT_STAT_H
+# define FT_STAT_H
 
-int	ft_bcmp(const void *str1, const void *str2, size_t size)
-{
-	return (ft_memcmp(str1, str2, size));
-}
+# include <sys/stat.h>
+# include <sys/types.h>
+
+int	ft_chmod(const char *path, mode_t mode);
+int	ft_mkdir(const char *path, mode_t mode);
+int	ft_mknod(const char *path, mode_t mode, dev_t dev);
+
+#endif

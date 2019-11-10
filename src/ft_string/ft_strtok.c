@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcmp.c                                          :+:      :+:    :+:   */
+/*   ft_strtok.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:27:42 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:34 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 13:44:04 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 13:45:52 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-int	ft_bcmp(const void *str1, const void *str2, size_t size)
+char	*ft_strtok(char *str, const char *sep)
 {
-	return (ft_memcmp(str1, str2, size));
+	static char	*ts;
+
+	if (!str && !(str = ts))
+		return (NULL);
+	str += ft_strspn(str, sep);
+	if (!*str)
+		return (ts = 0);
+	ts = str + ft_strcspn(str, sep);
+	if (*ts)
+		*ts++ = 0;
+	else
+		ts = 0;
+	return (str);
 }

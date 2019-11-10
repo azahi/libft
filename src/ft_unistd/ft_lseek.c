@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcmp.c                                          :+:      :+:    :+:   */
+/*   ft_lseek.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:27:42 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:34 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 15:29:56 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 16:54:43 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#include <ft_unistd.h>
+#include <syscall.h>
 
-int	ft_bcmp(const void *str1, const void *str2, size_t size)
+off_t	ft_lseek(int fd, off_t offset, int whence)
 {
-	return (ft_memcmp(str1, str2, size));
+	return (syscall(SYS_lseek, fd, offset, whence));
 }

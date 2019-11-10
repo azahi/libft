@@ -6,13 +6,13 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 02:28:55 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 02:31:06 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/10 13:02:42 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-void	ft_bcopy(const void *s1, void *s2, size_t size)
+void	ft_bcopy(const void *str1, void *str2, size_t size)
 {
-	ft_memmove(s2, s1, size);
+	ft_memmove(str2, str1, size);
 }

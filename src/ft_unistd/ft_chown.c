@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcmp.c                                          :+:      :+:    :+:   */
+/*   ft_chown.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:27:42 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:34 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 15:12:16 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 16:50:14 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#include <ft_unistd.h>
+#include <syscall.h>
 
-int	ft_bcmp(const void *str1, const void *str2, size_t size)
+int	ft_chown(const char *path, uid_t uid, gid_t gid)
 {
-	return (ft_memcmp(str1, str2, size));
+	return (syscall(SYS_chown, path, uid, gid));
 }

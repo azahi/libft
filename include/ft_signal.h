@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcmp.c                                          :+:      :+:    :+:   */
+/*   ft_signal.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:27:42 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:34 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 15:44:06 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 16:34:50 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#ifndef FT_SIGNAL_H
+# define FT_SIGNAL_H
 
-int	ft_bcmp(const void *str1, const void *str2, size_t size)
-{
-	return (ft_memcmp(str1, str2, size));
-}
+# include <signal.h>
+# include <sys/types.h>
+
+int	ft_kill(pid_t pid, int sig);
+
+#endif

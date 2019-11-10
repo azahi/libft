@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoll.c                                         :+:      :+:    :+:   */
+/*   ft_bsearch.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 02:48:33 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 16:48:44 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 15:00:05 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 15:02:34 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
 #include <ft_stdlib.h>
 
-long long	ft_atoll(const char *str)
+void *ft_bsearch(const void *key, const void *base, size_t nmemb, size_t size,
+		int (*cmp)(const void *, const void *))
 {
-	long long	n;
-	int			neg;
+	void	*try;
+	int		sign;
 
-	n = 0;
-	neg = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-')
-		neg = 1;
-	else if (*str == '+')
-		str++;
-	while (ft_isdigit(*str))
-		n = 10 * n - (*str++ - '0');
-	return (neg ? n : -n);
+	while (nmemb > 0)
+	{
+		try = (char *)base + size * (nmemb / 2);
+		sign = cmp(key, try);
+		if (sign < 0)
+		{
+			nmemb /= 2;
+		}
+		else if (sign > 0)
+		{
+			base = (char *)try + size;
+			nmemb -= nmemb/2+1;
+		}
+		else
+		{
+			return (try);
+		}
+	}
+	return (NULL);
 }

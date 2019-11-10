@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcmp.c                                          :+:      :+:    :+:   */
+/*   ft_fcntl.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:27:42 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:34 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 14:27:52 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/10 14:28:38 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#ifndef FT_FCNTL_H
+# define FT_FCNTL_H
 
-int	ft_bcmp(const void *str1, const void *str2, size_t size)
-{
-	return (ft_memcmp(str1, str2, size));
-}
+# include <fcntl.h>
+
+int	ft_creat(const char *filename, mode_t mode);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:00 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 12:32:07 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/10 13:51:10 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	ft_ispunct(int c);
 int	ft_isspace(int c);
 int	ft_isupper(int c);
 int	ft_isxdigit(int c);
+int	ft_toascii(int c);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
 

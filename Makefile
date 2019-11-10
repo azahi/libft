@@ -6,7 +6,7 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/11/10 03:29:00 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/11/10 16:54:13 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,14 +17,20 @@ CFLAGS := -std=c99 -Wall -Werror -Wextra -Wpedantic -O2
 INCDIR := include/
 _INC := \
 	ft_ctype.h \
+	ft_dirent.h \
+	ft_fcntl.h \
+	ft_signal.h \
+	ft_stat.h \
 	ft_stdio.h \
 	ft_stdlib.h \
-	ft_string.h
+	ft_string.h \
+	ft_unistd.h
 INC := $(addprefix $(INCDIR), $(_INC))
 
-SRCDIR = src/
-_SRCDIR_FT_CTYPE = ft_ctype/
-_SRC_FT_CTYPE = \
+SRCDIR := src/
+
+_SRCDIR_FT_CTYPE := ft_ctype/
+_SRC_FT_CTYPE := \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -38,10 +44,31 @@ _SRC_FT_CTYPE = \
 	ft_isspace.c \
 	ft_isupper.c \
 	ft_isxdigit.c \
+	ft_toascii.c \
 	ft_tolower.c \
 	ft_toupper.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_CTYPE), $(_SRC_FT_CTYPE)))
+
+_SRCDIR_FT_FCNTL := ft_fcntl/
+_SRC_FT_FCNTL := \
+	ft_creat.c
+SRC += $(addprefix $(SRCDIR), \
+	   $(addprefix $(_SRCDIR_FT_FCNTL), $(_SRC_FT_FCNTL)))
+
+_SRCDIR_FT_SIGNAL := ft_signal/
+_SRC_FT_SIGNAL := \
+	ft_kill.c
+SRC += $(addprefix $(SRCDIR), \
+	   $(addprefix $(_SRCDIR_FT_SIGNAL), $(_SRC_FT_SIGNAL)))
+
+_SRCDIR_FT_STAT := ft_stat/
+_SRC_FT_STAT := \
+	ft_chmod.c \
+	ft_mkdir.c \
+	ft_mknod.c
+SRC += $(addprefix $(SRCDIR), \
+	   $(addprefix $(_SRCDIR_FT_STAT), $(_SRC_FT_STAT)))
 
 _SRCDIR_FT_STDIO := ft_stdio/
 _SRC_FT_STDIO := \
@@ -63,9 +90,7 @@ _SRC_FT_STDLIB := \
 	ft_labs.c \
 	ft_ldiv.c \
 	ft_llabs.c \
-	ft_lldiv.c \
-	ft_strtol.c \
-	ft_strtoll.c
+	ft_lldiv.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STDLIB), $(_SRC_FT_STDLIB)))
 
@@ -115,13 +140,29 @@ _SRC_FT_STRING := \
 	ft_strnstr.c \
 	ft_strpbrk.c \
 	ft_strrchr.c \
+	ft_strsep.c \
 	ft_strspn.c \
 	ft_strstr.c \
+	ft_strtok.c \
 	ft_strupr.c \
 	ft_strxfrm.c \
 	ft_swab.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STRING), $(_SRC_FT_STRING)))
+
+_SRCDIR_FT_UNISTD := ft_unistd/
+_SRC_FT_UNISTD := \
+	ft_chdir.c \
+	ft_chown.c \
+	ft_link.c \
+	ft_lseek.c \
+	ft_pipe.c \
+	ft_readlink.c \
+	ft_rmdir.c \
+	ft_symlink.c \
+	ft_unlink.c
+SRC += $(addprefix $(SRCDIR), \
+	   $(addprefix $(_SRCDIR_FT_UNISTD), $(_SRC_FT_UNISTD)))
 
 OBJ := $(SRC:.c=.o)
 
