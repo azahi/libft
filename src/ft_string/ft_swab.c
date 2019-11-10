@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 00:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:23:22 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/10 17:07:47 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_swab(const void *src, void *dst, size_t size)
 	int				n;
 	unsigned long	tmp;
 
-	if (size <= 0)
+	if (!size)
 		return ;
 	n = size >> 1;
 	ts = (char *)src;
