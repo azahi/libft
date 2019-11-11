@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 13:40:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:42:40 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/11 16:00:53 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char *ft_strsep(char **str, const char *sep)
 	if (*end)
 		*end++ = '\0';
 	else
-		end = '\0';
+		*end = '\0';
 	*str = end;
 	return (ts);
 }

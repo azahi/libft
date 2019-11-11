@@ -6,7 +6,7 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/11/10 16:54:13 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/11/11 16:00:01 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -55,20 +55,6 @@ _SRC_FT_FCNTL := \
 	ft_creat.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_FCNTL), $(_SRC_FT_FCNTL)))
-
-_SRCDIR_FT_SIGNAL := ft_signal/
-_SRC_FT_SIGNAL := \
-	ft_kill.c
-SRC += $(addprefix $(SRCDIR), \
-	   $(addprefix $(_SRCDIR_FT_SIGNAL), $(_SRC_FT_SIGNAL)))
-
-_SRCDIR_FT_STAT := ft_stat/
-_SRC_FT_STAT := \
-	ft_chmod.c \
-	ft_mkdir.c \
-	ft_mknod.c
-SRC += $(addprefix $(SRCDIR), \
-	   $(addprefix $(_SRCDIR_FT_STAT), $(_SRC_FT_STAT)))
 
 _SRCDIR_FT_STDIO := ft_stdio/
 _SRC_FT_STDIO := \
@@ -149,20 +135,6 @@ _SRC_FT_STRING := \
 	ft_swab.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STRING), $(_SRC_FT_STRING)))
-
-_SRCDIR_FT_UNISTD := ft_unistd/
-_SRC_FT_UNISTD := \
-	ft_chdir.c \
-	ft_chown.c \
-	ft_link.c \
-	ft_lseek.c \
-	ft_pipe.c \
-	ft_readlink.c \
-	ft_rmdir.c \
-	ft_symlink.c \
-	ft_unlink.c
-SRC += $(addprefix $(SRCDIR), \
-	   $(addprefix $(_SRCDIR_FT_UNISTD), $(_SRC_FT_UNISTD)))
 
 OBJ := $(SRC:.c=.o)
 
