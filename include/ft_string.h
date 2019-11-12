@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:46:12 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/12 15:51:20 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char	*ft_strchr(const char *str, int ch);
 char	*ft_strchrnul(const char *str, int ch);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *str);
-char	*ft_strjoin(const char *str1, const char *str2);
 char	*ft_strlwr(const char *str);
 char	*ft_strncat(char *dst, const char *src, size_t size);
 char	*ft_strncpy(char *dst, const char *src, size_t size);

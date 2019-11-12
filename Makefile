@@ -6,7 +6,7 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/11/11 16:00:01 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/11/12 15:51:13 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -112,7 +112,6 @@ _SRC_FT_STRING := \
 	ft_strcpy.c \
 	ft_strcspn.c \
 	ft_strdup.c \
-	ft_strjoin.c \
 	ft_strlcat.c \
 	ft_strlcpy.c \
 	ft_strlen.c \
