@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/12 15:51:20 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/13 20:03:51 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strsep(char **str, const char *sep);
 char	*ft_strstr(const char *str, const char *find);
 char	*ft_strtok(char *str, const char *sep);
 char	*ft_strupr(const char *str);
-char    *ft_strcasestr(const char *str, const char *find);
+char	*ft_strcasestr(const char *str, const char *find);
 int		ft_bcmp(const void *str1, const void *str2, size_t size);
 int		ft_ffs(int mask);
 int		ft_ffsl(long mask);
@@ -64,6 +64,6 @@ void	*ft_memset(void *str, int ch, size_t size);
 void	ft_bcopy(const void *str1, void *str2, size_t size);
 void	ft_bzero(void *str, size_t size);
 void	ft_swab(const void *src, void *dst, size_t size);
-void    *ft_mempcpy(void *dst, const void *src, size_t size);
+void	*ft_mempcpy(void *dst, const void *src, size_t size);
 
 #endif

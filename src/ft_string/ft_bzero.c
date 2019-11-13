@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 02:29:41 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 02:31:31 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/13 20:23:56 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *str, size_t size)
 {
-	ft_memset(str, 0, size);
+	ft_memset(str, '\0', size);
 }

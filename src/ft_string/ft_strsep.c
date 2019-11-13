@@ -6,20 +6,20 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 13:40:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/11 16:00:53 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/13 20:49:59 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-char *ft_strsep(char **str, const char *sep)
+char	*ft_strsep(char **str, const char *sep)
 {
 	char *ts;
 	char *end;
 
 	ts = *str;
 	if (!ts)
-		return NULL;
+		return (NULL);
 	end = ts + ft_strcspn(ts, sep);
 	if (*end)
 		*end++ = '\0';
