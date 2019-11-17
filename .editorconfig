@@ -6,7 +6,7 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 23:54:17 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/10/17 23:54:18 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/11/17 21:08:02 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,3 +19,7 @@ indent_size = 4
 indent_style = tab
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[CMakeLists.txt]
+indent_size = 8
+indent_style = space

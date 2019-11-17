@@ -6,11 +6,12 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:53:18 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 21:06:15 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2019/11/17 21:18:31 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdlib.h>
+#include <inttypes.h>
 
 #define LIST "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 #define BUF_SIZE 7

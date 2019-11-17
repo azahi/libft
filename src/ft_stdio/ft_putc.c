@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 18:18:27 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:08:07 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/17 19:42:18 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/17 20:56:34 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <ft_stdio.h>
 
-#pragma GCC diagnostic ignored "-Wunused-result"
-#pragma GCC diagnostic push
-
-void	ft_putchar(int ch)
+int	ft_putc(int ch)
 {
-	write(1, &ch, 1);
+	fwrite(&ch, 1, 1, stdout);
+	return (ch);
 }
-
-#pragma GCC diagnostic pop

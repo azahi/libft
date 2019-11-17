@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puts.c                                          :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/17 19:42:18 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/17 20:45:49 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/17 20:12:03 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/11/17 20:59:51 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdio.h>
-#include <ft_string.h>
+#include <stdarg.h>
 
-int	ft_puts(const char *str)
+int	ft_printf(const char *fmt, ...)
 {
-	size_t size;
+	int		ret;
+	va_list	ap;
 
-	size = ft_strlen(str);
-	return ((fwrite(str, 1, size, stdout) == size) - 1);
+	va_start(ap, fmt);
+	ret = vfprintf(stdout, fmt, ap);
+	va_end(ap);
+	return (ret);
 }

@@ -6,13 +6,13 @@
 #    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/11/12 15:51:13 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/11/17 21:24:04 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 TARGET := libft.a
 
-CFLAGS := -std=c99 -Wall -Werror -Wextra -Wpedantic -O2
+CFLAGS := -std=c99 -Wall -Werror -Wextra
 
 INCDIR := include/
 _INC := \
@@ -58,7 +58,11 @@ SRC += $(addprefix $(SRCDIR), \
 
 _SRCDIR_FT_STDIO := ft_stdio/
 _SRC_FT_STDIO := \
-	ft_putchar.c \
+	ft_fprintf.c \
+	ft_fputc.c \
+	ft_fputs.c \
+	ft_printf.c \
+	ft_putc.c \
 	ft_puts.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STDIO), $(_SRC_FT_STDIO)))
