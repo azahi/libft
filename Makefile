@@ -1,21 +1,21 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/11/17 21:24:04 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/12/03 20:57:51 by jdeathlo         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
-TARGET := libft.a
+TARGET = libft.a
 
-CFLAGS := -std=c99 -Wall -Werror -Wextra
+CFLAGS = -std=c99 -Wall -Werror -Wextra
 
-INCDIR := include/
-_INC := \
+INCDIR = include/
+_INC = \
 	ft_ctype.h \
 	ft_dirent.h \
 	ft_fcntl.h \
@@ -25,12 +25,12 @@ _INC := \
 	ft_stdlib.h \
 	ft_string.h \
 	ft_unistd.h
-INC := $(addprefix $(INCDIR), $(_INC))
+INC = $(addprefix $(INCDIR), $(_INC))
 
-SRCDIR := src/
+SRCDIR = src/
 
-_SRCDIR_FT_CTYPE := ft_ctype/
-_SRC_FT_CTYPE := \
+_SRCDIR_FT_CTYPE = ft_ctype/
+_SRC_FT_CTYPE = \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -50,14 +50,14 @@ _SRC_FT_CTYPE := \
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_CTYPE), $(_SRC_FT_CTYPE)))
 
-_SRCDIR_FT_FCNTL := ft_fcntl/
-_SRC_FT_FCNTL := \
+_SRCDIR_FT_FCNTL = ft_fcntl/
+_SRC_FT_FCNTL = \
 	ft_creat.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_FCNTL), $(_SRC_FT_FCNTL)))
 
-_SRCDIR_FT_STDIO := ft_stdio/
-_SRC_FT_STDIO := \
+_SRCDIR_FT_STDIO = ft_stdio/
+_SRC_FT_STDIO = \
 	ft_fprintf.c \
 	ft_fputc.c \
 	ft_fputs.c \
@@ -67,8 +67,8 @@ _SRC_FT_STDIO := \
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STDIO), $(_SRC_FT_STDIO)))
 
-_SRCDIR_FT_STDLIB := ft_stdlib/
-_SRC_FT_STDLIB := \
+_SRCDIR_FT_STDLIB = ft_stdlib/
+_SRC_FT_STDLIB = \
 	ft_a64l.c \
 	ft_abs.c \
 	ft_atoi.c \
@@ -84,8 +84,8 @@ _SRC_FT_STDLIB := \
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STDLIB), $(_SRC_FT_STDLIB)))
 
-_SRCDIR_FT_STRING := ft_string/
-_SRC_FT_STRING := \
+_SRCDIR_FT_STRING = ft_string/
+_SRC_FT_STRING = \
 	ft_bcmp.c \
 	ft_bcopy.c \
 	ft_bzero.c \
@@ -139,7 +139,7 @@ _SRC_FT_STRING := \
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STRING), $(_SRC_FT_STRING)))
 
-OBJ := $(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I $(INCDIR) -o $@ -c $<
