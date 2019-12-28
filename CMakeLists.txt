@@ -25,12 +25,14 @@ add_library(ft STATIC
         src/ft_ctype/ft_tolower.c
         src/ft_ctype/ft_toupper.c
         src/ft_fcntl/ft_creat.c
+        src/ft_stdio/ft_asprintf.c
         src/ft_stdio/ft_fprintf.c
         src/ft_stdio/ft_fputc.c
         src/ft_stdio/ft_fputs.c
         src/ft_stdio/ft_printf.c
         src/ft_stdio/ft_putc.c
         src/ft_stdio/ft_puts.c
+        src/ft_stdio/ft_vasprintf.c
         src/ft_stdlib/ft_a64l.c
         src/ft_stdlib/ft_abs.c
         src/ft_stdlib/ft_atoi.c

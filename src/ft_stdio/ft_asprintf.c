@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fprintf.c                                       :+:      :+:    :+:   */
+/*   ft_asprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/17 20:12:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/12/28 23:53:21 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/12/28 23:30:53 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/12/28 23:53:04 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdio.h>
 
-int	ft_fprintf(FILE *file, const char *fmt, ...)
+int	ft_asprintf(char **strp, const char *fmt, ...)
 {
-	int		ret;
+	int		len;
 	va_list	ap;
 
 	va_start(ap, fmt);
-	ret = vfprintf(file, fmt, ap);
+	len = ft_vasprintf(strp, fmt, ap);
 	va_end(ap);
-	return (ret);
+	return (len);
 }

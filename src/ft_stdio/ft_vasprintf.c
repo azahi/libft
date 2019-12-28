@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fprintf.c                                       :+:      :+:    :+:   */
+/*   ft_vasprintf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/17 20:12:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/12/28 23:53:21 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/12/28 23:30:53 by jdeathlo          #+#    #+#             */
+/*   Updated: 2019/12/28 23:54:43 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdio.h>
+#include <ft_stdlib.h>
 
-int	ft_fprintf(FILE *file, const char *fmt, ...)
+int	ft_vasprintf(char **strp, const char *fmt, va_list ap)
 {
-	int		ret;
-	va_list	ap;
+	int		len;
+	va_list	ap_copy;
 
-	va_start(ap, fmt);
-	ret = vfprintf(file, fmt, ap);
-	va_end(ap);
-	return (ret);
+	va_copy(ap_copy, ap);
+	len = vsnprintf(NULL, 0, fmt, ap_copy);
+	va_end(ap_copy);
+	if (len < 0)
+		return (-1);
+	*strp = malloc(len + 1);
+	if (!*strp)
+		return (-1);
+	return (vsprintf(*strp, fmt, ap));
 }

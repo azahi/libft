@@ -6,7 +6,7 @@
 #    By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2019/12/03 20:57:51 by jdeathlo         ###   ########.fr        #
+#    Updated: 2019/12/28 23:52:38 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,12 +58,14 @@ SRC += $(addprefix $(SRCDIR), \
 
 _SRCDIR_FT_STDIO = ft_stdio/
 _SRC_FT_STDIO = \
+	ft_asprintf.c \
 	ft_fprintf.c \
 	ft_fputc.c \
 	ft_fputs.c \
 	ft_printf.c \
 	ft_putc.c \
-	ft_puts.c
+	ft_puts.c \
+	ft_vasprintf.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STDIO), $(_SRC_FT_STDIO)))
 
