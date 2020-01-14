@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.14)
 
 project(libft C)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wextra")
+set(CMAKE_C_STANDARD 99)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include_directories(include)
@@ -29,10 +30,18 @@ add_library(ft STATIC
         src/ft_stdio/ft_fprintf.c
         src/ft_stdio/ft_fputc.c
         src/ft_stdio/ft_fputs.c
+        src/ft_stdio/ft_fscanf.c
         src/ft_stdio/ft_printf.c
         src/ft_stdio/ft_putc.c
         src/ft_stdio/ft_puts.c
+        src/ft_stdio/ft_scanf.c
+        src/ft_stdio/ft_snprintf.c
+        src/ft_stdio/ft_sprintf.c
+        src/ft_stdio/ft_sscanf.c
         src/ft_stdio/ft_vasprintf.c
+        src/ft_stdio/ft_vprintf.c
+        src/ft_stdio/ft_vscanf.c
+        src/ft_stdio/ft_vsprintf.c
         src/ft_stdlib/ft_a64l.c
         src/ft_stdlib/ft_abs.c
         src/ft_stdlib/ft_atoi.c

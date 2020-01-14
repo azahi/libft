@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:01 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/12/28 23:55:05 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/01/14 19:47:39 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,21 @@
 # include <stdarg.h>
 # include <stdio.h>
 
-int		ft_asprintf(char **strp, const char *fmt, ...);
-int		ft_fprintf(FILE *file, const char *fmt, ...);
-int		ft_fputc(int ch, FILE *file);
-int		ft_fputs(const char *str, FILE *file);
-int		ft_printf(const char *fmt, ...);
-int		ft_putc(int ch);
-int		ft_puts(const char *str);
-int		ft_vasprintf(char **strp, const char *fmt, va_list ap);
+int	ft_asprintf(char **strp, const char *fmt, ...);
+int	ft_dprintf(int fd, const char *fmt, ...);
+int	ft_fprintf(FILE *f, const char *fmt, ...);
+int	ft_fputc(int ch, FILE *f);
+int	ft_fputs(const char *s, FILE *f);
+int	ft_printf(const char *fmt, ...);
+int	ft_putc(int ch);
+int	ft_puts(const char *s);
+int	ft_scanf(const char *fmt, ...);
+int	ft_snprintf(char *s, size_t n, const char *fmt, ...);
+int	ft_sprintf(char *s, const char *fmt, ...);
+int	ft_sscanf(const char *s, const char *fmt, ...);
+int	ft_vasprintf(char **strp, const char *fmt, va_list ap);
+int	ft_vprintf(const char *fmt, va_list ap);
+int	ft_vscanf(const char *fmt, va_list ap);
+int	ft_vsprintf(char *s, const char *fmt, va_list ap);
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 19:42:18 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/17 21:00:44 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/01/13 21:12:30 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdio.h>
 
-int	ft_fputc(int ch, FILE *file)
+int	ft_fputc(int ch, FILE *f)
 {
-	fwrite(&ch, 1, 1, file);
+	fwrite(&ch, 1, 1, f);
 	return (ch);
 }
