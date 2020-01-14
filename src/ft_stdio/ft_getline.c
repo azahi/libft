@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_getline.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 12:05:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/01/14 21:32:00 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/01/14 21:12:04 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/01/14 21:13:10 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <errno.h>
-#include <ft_stdlib.h>
-#include <ft_string.h>
+#include <ft_stdio.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+ssize_t	ft_getline(char **s, size_t n, FILE f)
 {
-	void	*ptr;
-
-	if (size && nmemb > (size_t)-1 / size)
-	{
-		errno = ENOMEM;
-		return (0);
-	}
-	size *= nmemb;
-	if (!(ptr = malloc(size)))
-		return (ptr);
-	return (ft_memset(ptr, 0, size));
+	return (getdelim(s, n, '\n', f));
 }
