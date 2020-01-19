@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlwr.c                                        :+:      :+:    :+:   */
+/*   strjoin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/20 19:08:58 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 21:21:04 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/01/19 14:24:58 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/01/19 14:33:01 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <ft.h>
+#include <ft_string.h>
 
-char	*ft_strlwr(const char *str)
+char	*strjoin(char const *s1, char const *s2)
 {
-	char	*ts;
+	char	*str;
 
-	ts = (char *)str;
-	while (*ts)
-	{
-		*ts = ft_tolower(*ts);
-		ts++;
-	}
-	return ((char *)str);
+	if (!s1 || !s2 || !(str = strnew(ft_strlen(s1) + ft_strlen(s2))))
+		return (NULL);
+	ft_strcpy(str, (char *)s1);
+	ft_strcat(str, (char *)s2);
+	return (str);
 }

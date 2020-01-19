@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupr.c                                        :+:      :+:    :+:   */
+/*   ufputn.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/20 19:08:58 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:18:47 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/01/19 14:05:24 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/01/19 14:10:49 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <ft.h>
 
-char	*ft_strupr(const char *str)
+void	ufputn(int n, int fd)
 {
-	char	*ts;
-
-	ts = (char *)str;
-	while (*ts)
+	if (n < 0)
 	{
-		*ts = ft_toupper(*ts);
-		ts++;
+		ufputc('-', fd);
+		n = -n;
 	}
-	return ((char *)str);
+	if (n == -2147483648)
+	{
+		ufputc('2', fd);
+		n %= 1000000000;
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ufputn(n / 10, fd);
+		ufputn(n % 10, fd);
+	}
+	else
+		ufputc(n + '0', fd);
 }

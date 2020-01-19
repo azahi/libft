@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_creat.c                                         :+:      :+:    :+:   */
+/*   ufputs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 14:28:54 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/13 20:03:23 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/17 19:42:18 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/01/19 13:52:58 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_fcntl.h>
+#include <ft_string.h>
+#include <unistd.h>
 
-int	ft_creat(const char *filename, mode_t mode)
+int	ufputs(const char *s, int fd)
 {
-	return (open(filename, O_CREAT | O_WRONLY | O_TRUNC, mode));
+	ssize_t	size;
+
+	size = ft_strlen(s);
+	return ((write(fd, s, size) == size) - 1);
 }

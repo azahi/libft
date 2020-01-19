@@ -6,28 +6,36 @@
 #    By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2020/01/14 20:18:41 by jdeathlo         ###   ########.fr        #
+#    Updated: 2020/01/19 14:50:58 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 TARGET = libft.a
 
-CFLAGS = -std=c99 -Wall -Werror -Wextra
+CFLAGS = -std=c99 -Wall -Werror -Wextra -pedantic
 
-INCDIR = include/
-_INC = \
-	ft_ctype.h \
-	ft_dirent.h \
-	ft_fcntl.h \
-	ft_signal.h \
-	ft_stat.h \
-	ft_stdio.h \
-	ft_stdlib.h \
-	ft_string.h \
-	ft_unistd.h
-INC = $(addprefix $(INCDIR), $(_INC))
+INCLUDE = include/
 
+SRC =
 SRCDIR = src/
+
+_SRCDIR_FT = ft/
+_SRC_FT = \
+	itoa.c \
+	strjoin.c \
+	strnew.c \
+	strsplit.c \
+	strtrim.c \
+	ufputc.c \
+	ufputn.c \
+	ufputs.c \
+	ufputsn.c \
+	uputc.c \
+	uputn.c \
+	uputs.c \
+	uputsn.c
+SRC += $(addprefix $(SRCDIR), \
+	   $(addprefix $(_SRCDIR_FT), $(_SRC_FT)))
 
 _SRCDIR_FT_CTYPE = ft_ctype/
 _SRC_FT_CTYPE = \
@@ -49,12 +57,6 @@ _SRC_FT_CTYPE = \
 	ft_toupper.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_CTYPE), $(_SRC_FT_CTYPE)))
-
-_SRCDIR_FT_FCNTL = ft_fcntl/
-_SRC_FT_FCNTL = \
-	ft_creat.c
-SRC += $(addprefix $(SRCDIR), \
-	   $(addprefix $(_SRCDIR_FT_FCNTL), $(_SRC_FT_FCNTL)))
 
 _SRCDIR_FT_STDIO = ft_stdio/
 _SRC_FT_STDIO = \
@@ -129,7 +131,6 @@ _SRC_FT_STRING = \
 	ft_strlcat.c \
 	ft_strlcpy.c \
 	ft_strlen.c \
-	ft_strlwr.c \
 	ft_strncasecmp.c \
 	ft_strncat.c \
 	ft_strncmp.c \
@@ -143,7 +144,6 @@ _SRC_FT_STRING = \
 	ft_strspn.c \
 	ft_strstr.c \
 	ft_strtok.c \
-	ft_strupr.c \
 	ft_strxfrm.c \
 	ft_swab.c
 SRC += $(addprefix $(SRCDIR), \
@@ -152,7 +152,7 @@ SRC += $(addprefix $(SRCDIR), \
 OBJ = $(SRC:.c=.o)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I $(INCDIR) -o $@ -c $<
+	$(CC) $(CFLAGS) -I $(INCLUDE) -o $@ -c $<
 
 $(TARGET): $(OBJ)
 	$(AR) rucsv $@ $?

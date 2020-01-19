@@ -2,13 +2,24 @@ cmake_minimum_required(VERSION 3.14)
 
 project(libft C)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wextra")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wextra -pedantic")
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include_directories(include)
 
 add_library(ft STATIC
+        src/ft/itoa.c
+        src/ft/strjoin.c
+        src/ft/strnew.c
+        src/ft/strsplit.c
+        src/ft/strtrim.c
+        src/ft/ufputc.c
+        src/ft/ufputs.c
+        src/ft/ufputsn.c
+        src/ft/uputc.c
+        src/ft/uputs.c
+        src/ft/uputsn.c
         src/ft_ctype/ft_isalnum.c
         src/ft_ctype/ft_isalpha.c
         src/ft_ctype/ft_isascii.c
@@ -25,7 +36,6 @@ add_library(ft STATIC
         src/ft_ctype/ft_toascii.c
         src/ft_ctype/ft_tolower.c
         src/ft_ctype/ft_toupper.c
-        src/ft_fcntl/ft_creat.c
         src/ft_stdio/ft_asprintf.c
         src/ft_stdio/ft_fprintf.c
         src/ft_stdio/ft_fputc.c
@@ -87,7 +97,6 @@ add_library(ft STATIC
         src/ft_string/ft_strlcat.c
         src/ft_string/ft_strlcpy.c
         src/ft_string/ft_strlen.c
-        src/ft_string/ft_strlwr.c
         src/ft_string/ft_strncasecmp.c
         src/ft_string/ft_strncat.c
         src/ft_string/ft_strncmp.c
@@ -101,6 +110,5 @@ add_library(ft STATIC
         src/ft_string/ft_strspn.c
         src/ft_string/ft_strstr.c
         src/ft_string/ft_strtok.c
-        src/ft_string/ft_strupr.c
         src/ft_string/ft_strxfrm.c
         src/ft_string/ft_swab.c)
