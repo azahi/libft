@@ -6,7 +6,7 @@
 #    By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2020/01/19 14:50:58 by jdeathlo         ###   ########.fr        #
+#    Updated: 2020/01/20 01:56:32 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCDIR = src/
 _SRCDIR_FT = ft/
 _SRC_FT = \
 	itoa.c \
+	rerealloc.c \
 	strjoin.c \
 	strnew.c \
 	strsplit.c \

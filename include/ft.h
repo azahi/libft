@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 13:06:45 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/01/19 14:49:24 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/01/20 01:54:18 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ufputsn(const char *, int);
 int		uputc(int);
 int		uputs(const char *);
 int		uputsn(const char *);
+void	*rerealloc(void *, size_t, size_t);
 void	ufputn(int, int);
 void	uputn(int);
 

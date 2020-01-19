@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdlib.h                                        :+:      :+:    :+:   */
+/*   rerealloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 12:14:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/01/20 01:53:39 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/01/20 01:26:56 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/01/20 02:01:34 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDLIB_H
-# define FT_STDLIB_H
+#include <ft_stdlib.h>
+#include <ft_string.h>
 
-# include <stdlib.h>
+void	*rerealloc(void *p, size_t n, size_t o)
+{
+	void	*new;
 
-div_t		ft_div(int, int);
-int			ft_abs(int);
-int			ft_atoi(const char *);
-ldiv_t		ft_ldiv(long, long);
-lldiv_t		ft_lldiv(long, long);
-long		ft_a64l(const char *);
-long		ft_atol(const char *);
-long		ft_labs(long);
-long long	ft_atoll(const char *);
-long long	ft_llabs(long long);
-void		*ft_calloc(size_t, size_t);
-
-#endif
+	if (!p)
+		return (malloc(n));
+	if (!(new = malloc(n)))
+	{
+		free(p);
+		return (NULL);
+	}
+	ft_memmove(new, p, o < n ? o : n);
+	free(p);
+	return (new);
+}
