@@ -1,12 +1,16 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.1...3.16)
 
-project(libft C)
+if (${CMAKE_VERSION} VERSION_LESS 3.12)
+        cmake_policy(VERSION {CMAKE_MAJOR_VERSION.${CMAKE_MINOR_VERSION}})
+endif()
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wextra -pedantic")
+project(libft
+        VERSION 0.1
+        LANGUAGES C)
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wextra")
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-include_directories(include)
 
 add_library(ft STATIC
         src/ft/itoa.c
@@ -113,3 +117,5 @@ add_library(ft STATIC
         src/ft_string/ft_strtok.c
         src/ft_string/ft_strxfrm.c
         src/ft_string/ft_swab.c)
+target_include_directories(ft
+        PUBLIC include)
