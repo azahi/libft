@@ -14,7 +14,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(ft STATIC
         src/ft/itoa.c
-        src/ft/rerealloc.c
         src/ft/strjoin.c
         src/ft/strnew.c
         src/ft/strsplit.c

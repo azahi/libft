@@ -6,13 +6,13 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 14:05:24 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/01/19 14:10:49 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/02/22 21:03:16 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
 
-void	ufputn(int n, int fd)
+void	ufputn(const int fd, int n)
 {
 	if (n < 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 19:42:18 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/01/19 13:42:10 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/02/22 21:09:46 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	uputc(int ch)
 {
-	return (ufputc(ch, 1));
+	return (ufputc(FT_STDOUT, ch));
 }
