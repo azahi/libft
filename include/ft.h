@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 13:06:45 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/01/20 01:54:18 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/02/22 20:53:39 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define FT_H
 
 #include <stddef.h>
+
+#define FT_STDIN 0
+#define FT_STDOUT 1
+#define FT_STDERR 2
 
 char	**strsplit(char const *, char);
 char	*itoa(int);
