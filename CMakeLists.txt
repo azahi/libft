@@ -21,6 +21,7 @@ add_library(ft STATIC
         src/ft/ufputc.c
         src/ft/ufputs.c
         src/ft/ufputsn.c
+        src/ft/ugetline.c
         src/ft/uputc.c
         src/ft/uputs.c
         src/ft/uputsn.c
