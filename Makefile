@@ -6,7 +6,7 @@
 #    By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2020/02/22 21:06:24 by jdeathlo         ###   ########.fr        #
+#    Updated: 2020/02/23 14:59:14 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ _SRC_FT = \
 	ufputn.c \
 	ufputs.c \
 	ufputsn.c \
+	ugetline.c \
 	uputc.c \
 	uputn.c \
 	uputs.c \
