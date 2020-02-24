@@ -16,8 +16,6 @@ add_library(ft STATIC
         src/ft/itoa.c
         src/ft/strjoin.c
         src/ft/strnew.c
-        src/ft/strsplit.c
-        src/ft/strtrim.c
         src/ft/ufputc.c
         src/ft/ufputs.c
         src/ft/ufputsn.c
@@ -116,6 +114,7 @@ add_library(ft STATIC
         src/ft_string/ft_strstr.c
         src/ft_string/ft_strtok.c
         src/ft_string/ft_strxfrm.c
-        src/ft_string/ft_swab.c)
+        src/ft_string/ft_swab.c
+        src/ft_unistd/ft_getopt.c)
 target_include_directories(ft
         PUBLIC include)

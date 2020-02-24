@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 13:06:45 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/02/23 12:57:49 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/02/24 19:42:10 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #define FT_STDOUT 1
 #define FT_STDERR 2
 
-char	**strsplit(char const *, char);
 char	*itoa(int);
 char	*strjoin(char const *, char const *);
 char	*strnew(size_t);

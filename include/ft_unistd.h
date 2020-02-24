@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ufputs.c                                           :+:      :+:    :+:   */
+/*   ft_unistd.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/17 19:42:18 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/02/24 19:36:21 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/02/24 18:50:08 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/02/24 19:39:57 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
-#include <ft_unistd.h>
+#ifndef FT_UNISTD_H
+# define FT_UNISTD_H
 
-int	ufputs(const int fd, const char *s)
-{
-	ssize_t	size;
+# include <unistd.h>
 
-	size = ft_strlen(s);
-	return ((write(fd, s, size) == size) - 1);
-}
+int		ft_getopt(int, char *const *, const char *);
+
+char	*g_optarg;
+int		g_opterr;
+int		g_optind;
+int		g_optopt;
+int		g_optreset;
+
+#endif

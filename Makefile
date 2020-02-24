@@ -6,13 +6,13 @@
 #    By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2020/02/23 14:59:14 by jdeathlo         ###   ########.fr        #
+#    Updated: 2020/02/24 19:44:43 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 TARGET = libft.a
 
-CFLAGS = -std=c99 -Wall -Werror -Wextra -pedantic
+CFLAGS = -std=c99 -Wall -Werror -Wextra
 
 INCLUDE = include/
 
@@ -24,8 +24,6 @@ _SRC_FT = \
 	itoa.c \
 	strjoin.c \
 	strnew.c \
-	strsplit.c \
-	strtrim.c \
 	ufputc.c \
 	ufputn.c \
 	ufputs.c \
@@ -149,6 +147,12 @@ _SRC_FT_STRING = \
 	ft_swab.c
 SRC += $(addprefix $(SRCDIR), \
 	   $(addprefix $(_SRCDIR_FT_STRING), $(_SRC_FT_STRING)))
+
+_SRCDIR_FT_UNISTD = ft_unistd/
+_SRC_FT_UNISTD = \
+	ft_getopt.c
+SRC += $(addprefix $(SRCDIR), \
+	   $(addprefix $(_SRCDIR_FT_UNISTD), $(_SRC_FT_UNISTD)))
 
 OBJ = $(SRC:.c=.o)
 

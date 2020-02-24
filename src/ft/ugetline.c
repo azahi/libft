@@ -6,14 +6,14 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 12:54:49 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/02/23 13:00:00 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/02/24 19:36:34 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
 #include <ft_stdlib.h>
 #include <ft_string.h>
-#include <unistd.h>
+#include <ft_unistd.h>
 
 #define BUFF_SIZE 8
 
