@@ -6,11 +6,11 @@
 #    By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2020/02/24 19:44:43 by jdeathlo         ###   ########.fr        #
+#    Updated: 2020/02/29 15:39:29 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-TARGET = libft.a
+NAME = libft.a
 
 CFLAGS = -std=c99 -Wall -Werror -Wextra
 
@@ -159,16 +159,16 @@ OBJ = $(SRC:.c=.o)
 %.o: %.c
 	$(CC) $(CFLAGS) -I $(INCLUDE) -o $@ -c $<
 
-$(TARGET): $(OBJ)
+$(NAME): $(OBJ)
 	$(AR) rucsv $@ $?
 
-all: $(TARGET)
+all: $(NAME)
 
 clean:
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(TARGET)
+	$(RM) $(NAME)
 
 re: fclean all
 
