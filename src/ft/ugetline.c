@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ugetline.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 12:54:49 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/02/24 19:36:34 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/03/09 14:37:09 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,9 @@
 #include <ft_string.h>
 #include <ft_unistd.h>
 
+#include "ugetline.h"
+
 #define BUFF_SIZE 8
-
-typedef struct	s_list {
-	void *content;
-	size_t content_size;
-	struct s_list *next;
-}				t_list;
-
 
 static t_list	*lstnew(void const *content, size_t content_size)
 {

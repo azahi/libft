@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_getopt.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:51:33 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/02/24 19:40:02 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/03/09 14:51:05 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int			g_optreset;
 #define BADARG (int)':'
 
 #define EMSG ""
+
 static char	*g_place = EMSG;
 
 static void	print_argerr(char *name)

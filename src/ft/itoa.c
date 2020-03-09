@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   itoa.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 14:16:02 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/01/19 14:33:42 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/03/09 14:42:18 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char			*itoa(int n)
 		nn = -n;
 		len++;
 	}
-	if (!(str = ft_calloc(len, sizeof (*str))))
+	if (!(str = ft_calloc(len, sizeof(*str))))
 		return (NULL);
 	str[--len] = nn % 10 + '0';
 	while (nn /= 10)
