@@ -39,6 +39,8 @@ add_library(ft STATIC
         src/ft_ctype/ft_toascii.c
         src/ft_ctype/ft_tolower.c
         src/ft_ctype/ft_toupper.c
+        src/ft_libgen/ft_basename.c
+        src/ft_libgen/ft_dirname.c
         src/ft_stdio/ft_asprintf.c
         src/ft_stdio/ft_fprintf.c
         src/ft_stdio/ft_fputc.c
@@ -62,11 +64,15 @@ add_library(ft STATIC
         src/ft_stdlib/ft_atoll.c
         src/ft_stdlib/ft_calloc.c
         src/ft_stdlib/ft_div.c
+        src/ft_stdlib/ft_getenv.c
         src/ft_stdlib/ft_l64a.c
         src/ft_stdlib/ft_labs.c
         src/ft_stdlib/ft_ldiv.c
         src/ft_stdlib/ft_llabs.c
         src/ft_stdlib/ft_lldiv.c
+        src/ft_stdlib/ft_putenv.c
+        src/ft_stdlib/ft_setenv.c
+        src/ft_stdlib/ft_unsetenv.c
         src/ft_string/ft_bcmp.c
         src/ft_string/ft_bcopy.c
         src/ft_string/ft_bzero.c

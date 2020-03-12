@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 13:06:45 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/02/24 19:42:10 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/03/11 21:22:24 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 #define FT_STDOUT 1
 #define FT_STDERR 2
 
-char	*itoa(int);
-char	*strjoin(char const *, char const *);
-char	*strnew(size_t);
-int		ufputc(const int, int);
-int		ufputs(const int, const char *);
-int		ufputsn(const int, const char *);
-int		ugetline(const int, char **);
-int		uputc(int);
-int		uputs(const char *);
-int		uputsn(const char *);
-void	ufputn(const int, int);
-void	uputn(int);
+char	*itoa(int a);
+char	*strjoin(char const *a, char const *b);
+char	*strnew(size_t a);
+int		ufputc(const int a, int b);
+int		ufputs(const int a, const char *b);
+int		ufputsn(const int a, const char *b);
+int		ugetline(const int a, char **b);
+int		uputc(int a);
+int		uputs(const char *a);
+int		uputsn(const char *a);
+void	ufputn(const int a, int b);
+void	uputn(int a);
 
 #endif

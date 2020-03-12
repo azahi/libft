@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unistd.h                                        :+:      :+:    :+:   */
+/*   ft_getenv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 18:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/13 01:12:03 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/11 12:04:53 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/11 12:38:49 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UNISTD_H
-# define FT_UNISTD_H
+#include <ft_string.h>
 
-# include <unistd.h>
+#include "env.h"
 
-int		ft_getopt(int a, char *const *b, const char *c);
+char	*ft_getenv(const char *name)
+{
+	size_t	l;
+	char	**e;
 
-char	*g_optarg;
-int		g_opterr;
-int		g_optind;
-int		g_optopt;
-int		g_optreset;
-
-#endif
+	l = ft_strchrnul(name, '=') - name;
+	if (l && !name[l] && environ)
+	{
+		e = environ;
+		while (*e)
+		{
+			if (!ft_strncmp(name, *e, l) && l[*e] == '=')
+				return (*e + l + 1);
+			e++;
+		}
+	}
+	return (0);
+}

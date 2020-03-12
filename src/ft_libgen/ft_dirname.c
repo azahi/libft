@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unistd.h                                        :+:      :+:    :+:   */
+/*   ft_dirname.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 18:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/13 01:12:03 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/12 23:57:49 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/13 00:01:48 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UNISTD_H
-# define FT_UNISTD_H
+#include <ft_string.h>
 
-# include <unistd.h>
+char	*ft_dirname(char *s)
+{
+	size_t	i;
 
-int		ft_getopt(int a, char *const *b, const char *c);
-
-char	*g_optarg;
-int		g_opterr;
-int		g_optind;
-int		g_optopt;
-int		g_optreset;
-
-#endif
+	if (!s || !*s)
+		return (".");
+	i = ft_strlen(s) - 1;
+	while (s[i] == '/')
+	{
+		if (!i)
+			return ("/");
+		i--;
+	}
+	while (s[i] != '/')
+	{
+		if (!i)
+			return (".");
+		i--;
+	}
+	while (s[i] == '/')
+	{
+		if (!i)
+			return ("/");
+		i--;
+	}
+	s[i + 1] = '\0';
+	return (s);
+}

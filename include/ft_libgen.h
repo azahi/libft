@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unistd.h                                        :+:      :+:    :+:   */
+/*   ft_libgen.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 18:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/13 01:12:03 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/13 00:05:31 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/13 00:31:25 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UNISTD_H
-# define FT_UNISTD_H
+#ifndef LIBGEN_H
+# define LIBGEN_H
 
-# include <unistd.h>
+#include <libgen.h>
 
-int		ft_getopt(int a, char *const *b, const char *c);
-
-char	*g_optarg;
-int		g_opterr;
-int		g_optind;
-int		g_optopt;
-int		g_optreset;
+char	*ft_basename(char *a);
+char	*ft_dirname(char *a);
 
 #endif
