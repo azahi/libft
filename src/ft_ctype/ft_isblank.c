@@ -6,11 +6,19 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 21:53:26 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 18:56:10 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/03/13 23:39:13 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <ft_ctype.h>
 
 int	ft_isblank(int c)
 {
 	return (c == ' ' || c == '\t');
+}
+
+int	ft_isblank_l(int c, locale_t l)
+{
+	(void)l;
+	return (ft_isblank(c));
 }

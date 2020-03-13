@@ -6,11 +6,19 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 19:24:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 12:28:15 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/03/13 23:51:01 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_ctype.h>
+
 int	ft_isdigit(int c)
 {
-	return (c >= '0' && c <= '9');
+	return ((unsigned)c - '0' < 10);
+}
+
+int	ft_isdigit_l(int c, locale_t l)
+{
+	(void)l;
+	return (ft_isdigit(c));
 }

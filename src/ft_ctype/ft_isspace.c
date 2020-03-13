@@ -6,12 +6,19 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 21:37:44 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 12:28:27 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/03/14 00:01:57 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_ctype.h>
+
 int	ft_isspace(int c)
 {
-	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r' ||
-			c == ' ');
+	return (c == ' ' || (unsigned)c - '\t' < 5);
+}
+
+int	ft_isspace_l(int c, locale_t l)
+{
+	(void)l;
+	return (ft_isspace(c));
 }

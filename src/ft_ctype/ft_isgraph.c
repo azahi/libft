@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 18:50:19 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/19 12:19:55 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/03/14 00:49:24 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 int	ft_isgraph(int c)
 {
-	return (ft_isprint(c) && c != ' ');
+	return ((unsigned)c - 0x21 < 0x5e);
+}
+
+int	ft_isgraph_l(int c, locale_t l)
+{
+	(void)l;
+	return (ft_isgraph(c));
 }
