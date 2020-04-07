@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:47 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/13 01:02:47 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/07 12:54:21 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ft_stdlib.h>
 #include <ft_string.h>
 
-#include "env.h"
+#include "__env.h"
 
 void		__env_rm_add(char *old, char *new)
 {

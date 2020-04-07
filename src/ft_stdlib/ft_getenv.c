@@ -6,13 +6,14 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:04:53 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/11 12:38:49 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/07 12:53:50 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-#include "env.h"
+#include "../__environ.h"
+#include "__env.h"
 
 char	*ft_getenv(const char *name)
 {

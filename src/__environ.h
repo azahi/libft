@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   __environ.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/11 12:08:48 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/30 17:58:53 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#ifndef __ENVIRON_H
+# define __ENVIRON_H
 
-int	ft_iscntrl(int c)
-{
-	return ((unsigned)c < 0x20 || c == 0x7f);
-}
+/*
+** Fuck norminette.
+*/
+
+# define NORM_ENVIRON extern char **environ
+
+NORM_ENVIRON;
+
+# undef NORM_ENVIRON
+
+#endif

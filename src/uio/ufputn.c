@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ufputn.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/01/19 14:05:24 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/19 20:10:05 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <uio.h>
 
-int	ft_iscntrl(int c)
+void	ufputn(t_fd fd, int n)
 {
-	return ((unsigned)c < 0x20 || c == 0x7f);
+	if (n < 0)
+	{
+		ufputc(fd, '-');
+		n = -n;
+	}
+	if (n == -2147483648)
+	{
+		ufputc(fd, '2');
+		n %= 1000000000;
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ufputn(fd, n / 10);
+		ufputn(fd, n % 10);
+	}
+	else
+		ufputc(fd, n + '0');
 }

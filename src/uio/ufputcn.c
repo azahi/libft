@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ufputcn.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/19 13:24:54 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/25 22:12:33 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <ft_unistd.h>
+#include <uio.h>
 
-int	ft_iscntrl(int c)
+int	ufputcn(t_fd fd, int ch)
 {
-	return ((unsigned)c < 0x20 || c == 0x7f);
+	return ((ufputc(fd, ch) + ufputc(fd, '\n') == 2) - 1);
 }

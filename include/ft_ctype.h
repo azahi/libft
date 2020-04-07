@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:00 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/14 00:53:01 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/07 14:30:29 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,19 @@
 # include <ctype.h>
 
 int	ft_isalnum(int a);
-int	ft_isalnum_l(int a, locale_t b);
 int	ft_isalpha(int a);
-int	ft_isalpha_l(int a, locale_t b);
 int	ft_isascii(int a);
 int	ft_isblank(int a);
-int	ft_isblank_l(int a, locale_t b);
 int	ft_iscntrl(int a);
-int	ft_iscntrl_l(int a, locale_t b);
 int	ft_isdigit(int a);
-int	ft_isdigit_l(int a, locale_t b);
 int	ft_isgraph(int a);
-int	ft_isgraph_l(int a, locale_t b);
 int	ft_islower(int a);
-int	ft_islower_l(int a, locale_t b);
 int	ft_isprint(int a);
-int	ft_isprint_l(int a, locale_t b);
 int	ft_ispunct(int a);
-int	ft_ispunct_l(int a, locale_t b);
 int	ft_isspace(int a);
-int	ft_isspace_l(int a, locale_t b);
 int	ft_isupper(int a);
-int	ft_isupper_l(int a, locale_t b);
 int	ft_isxdigit(int a);
-int	ft_isxdigit_l(int a, locale_t b);
-int	ft_toascii(int a);
 int	ft_tolower(int a);
-int	ft_tolower_l(int a, locale_t b);
 int	ft_toupper(int a);
-int	ft_toupper_l(int a, locale_t b);
 
 #endif

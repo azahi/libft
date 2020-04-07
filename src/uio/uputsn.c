@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   uputsn.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/17 19:42:18 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/27 23:36:05 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <uio.h>
 
-int	ft_iscntrl(int c)
+int	uputsn(const char *restrict s)
 {
-	return ((unsigned)c < 0x20 || c == 0x7f);
+	return (ufputsn(STDOUT_FILENO, s));
 }

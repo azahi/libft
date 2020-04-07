@@ -6,14 +6,15 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/13 00:43:26 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/07 12:54:08 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_stdlib.h>
 #include <ft_string.h>
 
-#include "env.h"
+#include "../__environ.h"
+#include "__env.h"
 
 int __putenv(char *s, size_t l, char *r)
 {

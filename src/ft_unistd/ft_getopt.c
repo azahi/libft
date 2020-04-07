@@ -6,12 +6,11 @@
 /*   By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:51:33 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/09 14:51:05 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/07 14:35:48 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft.h>
-#include <ft_stdio.h>
+#include <uio.h>
 #include <ft_string.h>
 
 char		*g_optarg;
@@ -29,18 +28,18 @@ static char	*g_place = EMSG;
 
 static void	print_argerr(char *name)
 {
-	ufputs(FT_STDERR, name);
-	ufputs(FT_STDERR, ": option requires an argument -- \'");
-	ufputc(FT_STDERR, g_optopt);
-	ufputs(FT_STDERR, "\'\n");
+	ufputs(STDERR_FILENO, name);
+	ufputs(STDERR_FILENO, ": option requires an argument -- \'");
+	ufputc(STDERR_FILENO, g_optopt);
+	ufputs(STDERR_FILENO, "\'\n");
 }
 
 static void	print_opterr(char *name)
 {
-	ufputs(FT_STDERR, name);
-	ufputs(FT_STDERR, ": invalid option -- \'");
-	ufputc(FT_STDERR, g_optopt);
-	ufputs(FT_STDERR, "\'\n");
+	ufputs(STDERR_FILENO, name);
+	ufputs(STDERR_FILENO, ": invalid option -- \'");
+	ufputc(STDERR_FILENO, g_optopt);
+	ufputs(STDERR_FILENO, "\'\n");
 }
 
 static int	get_help(int argc, char *const *argv, const char *ostr,
@@ -60,7 +59,7 @@ static int	get_help(int argc, char *const *argv, const char *ostr,
 	}
 	if (g_optopt == ':' || !(*oli = ft_strchr(ostr, g_optopt)))
 	{
-		if (*g_place == 0)
+		if (*g_place == '\0')
 			++g_optind;
 		if (g_opterr && *ostr != ':')
 			print_opterr(argv[0]);
@@ -76,7 +75,8 @@ int			ft_getopt(int argc, char *const *argv, const char *ostr)
 
 	if ((c = get_help(argc, argv, ostr, &oli)))
 		return (c);
-	if (!(oli[1] != ':' && !(g_optarg = 0) && ((!*g_place && g_optind++) || 1)))
+	if (!(oli[1] != ':' && !(g_optarg = NULL) &&
+				((!*g_place && g_optind++) || 1)))
 	{
 		if (*g_place)
 			g_optarg = g_place;

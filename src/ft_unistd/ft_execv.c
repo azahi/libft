@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ft_execv.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/14 01:37:00 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/30 17:59:13 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <ft_unistd.h>
 
-int	ft_iscntrl(int c)
+#include "../__environ.h"
+
+int	ft_execv(const char *file, char *const argv[])
 {
-	return ((unsigned)c < 0x20 || c == 0x7f);
+	return (ft_execve(file, argv, environ));
 }

@@ -13,16 +13,6 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_library(ft STATIC
-        src/ft/itoa.c
-        src/ft/strjoin.c
-        src/ft/strnew.c
-        src/ft/ufputc.c
-        src/ft/ufputs.c
-        src/ft/ufputsn.c
-        src/ft/ugetline.c
-        src/ft/uputc.c
-        src/ft/uputs.c
-        src/ft/uputsn.c
         src/ft_ctype/ft_isalnum.c
         src/ft_ctype/ft_isalpha.c
         src/ft_ctype/ft_isascii.c
@@ -36,27 +26,8 @@ add_library(ft STATIC
         src/ft_ctype/ft_isspace.c
         src/ft_ctype/ft_isupper.c
         src/ft_ctype/ft_isxdigit.c
-        src/ft_ctype/ft_toascii.c
         src/ft_ctype/ft_tolower.c
         src/ft_ctype/ft_toupper.c
-        src/ft_libgen/ft_basename.c
-        src/ft_libgen/ft_dirname.c
-        src/ft_stdio/ft_asprintf.c
-        src/ft_stdio/ft_fprintf.c
-        src/ft_stdio/ft_fputc.c
-        src/ft_stdio/ft_fputs.c
-        src/ft_stdio/ft_fscanf.c
-        src/ft_stdio/ft_printf.c
-        src/ft_stdio/ft_putc.c
-        src/ft_stdio/ft_puts.c
-        src/ft_stdio/ft_scanf.c
-        src/ft_stdio/ft_snprintf.c
-        src/ft_stdio/ft_sprintf.c
-        src/ft_stdio/ft_sscanf.c
-        src/ft_stdio/ft_vasprintf.c
-        src/ft_stdio/ft_vprintf.c
-        src/ft_stdio/ft_vscanf.c
-        src/ft_stdio/ft_vsprintf.c
         src/ft_stdlib/ft_a64l.c
         src/ft_stdlib/ft_abs.c
         src/ft_stdlib/ft_atoi.c
@@ -121,6 +92,25 @@ add_library(ft STATIC
         src/ft_string/ft_strtok.c
         src/ft_string/ft_strxfrm.c
         src/ft_string/ft_swab.c
-        src/ft_unistd/ft_getopt.c)
+        src/ft_unistd/ft_execv.c
+        src/ft_unistd/ft_execve.c
+        src/ft_unistd/ft_execvp.c
+        src/ft_unistd/ft_getopt.c
+        src/uio/ufgetc.c
+        src/uio/ufgetl.c
+        src/uio/ufputc.c
+        src/uio/ufputcn.c
+        src/uio/ufputn.c
+        src/uio/ufputnn.c
+        src/uio/ufputs.c
+        src/uio/ufputsn.c
+        src/uio/ugetc.c
+        src/uio/ugetl.c
+        src/uio/uputc.c
+        src/uio/uputcn.c
+        src/uio/uputn.c
+        src/uio/uputnn.c
+        src/uio/uputs.c
+        src/uio/uputsn.c)
 target_include_directories(ft
         PUBLIC include)

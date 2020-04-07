@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ufgetl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/02/23 12:54:49 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/04/07 14:31:33 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <errno.h>
+#include <uio.h>
 
-int	ft_iscntrl(int c)
+#include "__ufgetl.h"
+
+ssize_t	ufgetl(t_fd fd, char **restrict line)
 {
-	return ((unsigned)c < 0x20 || c == 0x7f);
+	(void)fd;
+	(void)line;
+
+	errno = ENOSYS;
+	return (0);
 }

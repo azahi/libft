@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   __ufgetl.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/04/07 10:44:15 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/04/07 10:45:25 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#ifndef __UFGETL_H
+# define __UFGETL_H
 
-int	ft_iscntrl(int c)
-{
-	return ((unsigned)c < 0x20 || c == 0x7f);
-}
+# define UGETL_BUFFER 32
+
+#endif

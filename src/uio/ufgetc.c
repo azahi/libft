@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ufgetc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/17 16:53:29 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/19 13:35:28 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <ft_unistd.h>
+#include <uio.h>
 
-int	ft_iscntrl(int c)
+int	ufgetc(t_fd fd)
 {
-	return ((unsigned)c < 0x20 || c == 0x7f);
+	int	ch;
+
+	(void)read(fd, &ch, 1);
+	return (ch);
 }

@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ft_execve.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/14 01:40:25 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/22 15:49:10 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <ft_unistd.h>
 
-int	ft_iscntrl(int c)
+#ifdef __linux__
+# include <sys/syscall.h>
+
+int	ft_execve(const char *file, char *const argv[], char *const envp[])
 {
-	return ((unsigned)c < 0x20 || c == 0x7f);
+	return (syscall(SYS_execve, file, argv, envp));
 }
+
+#else
+
+int	ft_execve(const char *file, char *const argv[], char *const envp[])
+{
+	return (execve(file, argv, envp));
+}
+
+#endif

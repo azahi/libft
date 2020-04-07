@@ -6,14 +6,15 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:48 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/13 01:02:02 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/07 12:55:18 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <errno.h>
 #include <ft_string.h>
 
-#include "env.h"
+#include "../__environ.h"
+#include "__env.h"
 
 static int	einval(void)
 {

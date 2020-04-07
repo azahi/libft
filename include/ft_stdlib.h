@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/13 01:08:58 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/07 14:28:26 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ long		ft_labs(long a);
 long long	ft_atoll(const char *a);
 long long	ft_llabs(long long a);
 void		*ft_calloc(size_t a, size_t b);
+void		*ft_malloc(size_t a);
+void		*ft_realloc(void *ptr, size_t size);
+void		ft_free(void *ptr);
 
 #endif

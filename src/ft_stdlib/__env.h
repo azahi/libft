@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   __env.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/11 12:08:48 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/04/07 14:29:33 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#ifndef __ENV_H
+# define __ENV_H
 
-int	ft_iscntrl(int c)
-{
-	return ((unsigned)c < 0x20 || c == 0x7f);
-}
+#include <stddef.h>
+
+int		__putenv(char *a, size_t b, char *c);
+void	__env_rm_add(char *a, char *b);
+
+#endif

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iscntrl.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/06 18:50:15 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:51:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/03/20 14:26:01 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/03/22 10:06:21 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_ctype.h>
+#include <ft_stdlib.h>
 
-int	ft_iscntrl(int c)
+/*
+** Placeholder function.
+*/
+
+void	*ft_realloc(void *ptr, size_t size)
 {
-	return ((unsigned)c < 0x20 || c == 0x7f);
+	return (realloc(ptr, size));
 }
