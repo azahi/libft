@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_stdlib.h>
-#include <inttypes.h>
+#include <stdint.h>
 
 #define LIST "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 #define BUF_SIZE 7

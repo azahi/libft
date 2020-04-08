@@ -6,12 +6,11 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 19:42:18 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/27 23:34:44 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 21:33:51 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
-#include <ft_unistd.h>
 #include <uio.h>
 
 int	ufputs(t_fd fd, const char *restrict s)

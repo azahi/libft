@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:04:53 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 10:46:23 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 21:23:47 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <ft_string.h>
 
 #include "../__environ.h"
-#include "__env.h"
 
 char	*ft_getenv(const char *name)
 {

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <ft_ctype.h>
-#include <stddef.h>
 #include <stdint.h>
 
 int	ft_strcasecmp(const char *str1, const char *str2)

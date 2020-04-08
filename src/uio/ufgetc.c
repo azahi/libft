@@ -6,11 +6,10 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 16:53:29 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/19 13:35:28 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 21:32:59 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_unistd.h>
 #include <uio.h>
 
 int	ufgetc(t_fd fd)

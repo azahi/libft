@@ -6,26 +6,25 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/19 20:11:29 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 20:49:53 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 21:34:06 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define _GNU_SOURCE
 
-#include <errno.h>
 #include <ft_stdlib.h>
 #include <ft_string.h>
-#include <ft_unistd.h>
+#include <unistd.h>
 
-#include "__ufgetl.h"
+#define UGETL_BUFFER 32
 
 ssize_t	ugetl(char **restrict lineptr)
 {
 	char	*tmp;
 	char	buf[UGETL_BUFFER + 1];
+	int		flag;
 	ssize_t	size;
 	ssize_t	size_final;
-	int		flag;
 
 	flag = 0;
 	size_final = 0;

@@ -6,12 +6,14 @@
 /*   By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:51:33 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 14:35:48 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 21:14:59 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <uio.h>
 #include <ft_string.h>
+#include <ft_unistd.h>
+#include <stddef.h>
+#include <uio.h>
 
 char		*g_optarg;
 int			g_opterr = 1;

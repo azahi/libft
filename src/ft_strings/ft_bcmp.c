@@ -6,12 +6,11 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/08 09:11:47 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 20:08:57 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 21:16:37 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define _BSD_SOURCE
-#define _DEFAULT_SOURCE
+#define _GNU_SOURCE
 
 #include <ft_string.h>
 

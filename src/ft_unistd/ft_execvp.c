@@ -17,6 +17,7 @@
 #include <ft_string.h>
 #include <ft_unistd.h>
 #include <limits.h>
+#include <stddef.h>
 
 #include "../__environ.h"
 
