@@ -6,11 +6,11 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 19:43:51 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:48:56 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 09:29:29 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *restrict dst, const char *restrict src)
 {
 	char	*td;
 

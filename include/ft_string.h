@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/13 01:12:20 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 09:03:48 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,55 +15,73 @@
 
 # include <string.h>
 
-char	*ft_index(const char *a, int b);
-char	*ft_rindex(const char *a, int b);
-char	*ft_stpcpy(char *a, const char *b);
-char	*ft_stpncpy(char *a, const char *b, size_t c);
-char	*ft_strcasestr(const char *a, const char *b);
-char	*ft_strcat(char *a, const char *b);
-char	*ft_strchr(const char *a, int b);
-char	*ft_strchrnul(const char *a, int b);
-char	*ft_strcpy(char *a, const char *b);
-char	*ft_strdup(const char *a);
-char	*ft_strlwr(const char *a);
-char	*ft_strncat(char *a, const char *b, size_t c);
-char	*ft_strncpy(char *a, const char *b, size_t c);
-char	*ft_strndup(const char *a, size_t b);
-char	*ft_strnstr(const char *a, const char *b, size_t c);
-char	*ft_strpbrk(const char *a, const char *b);
-char	*ft_strrchr(const char *a, int b);
-char	*ft_strsep(char **a, const char *b);
-char	*ft_strstr(const char *a, const char *b);
-char	*ft_strtok(char *a, const char *b);
-char	*ft_strupr(const char *a);
-int		ft_bcmp(const void *a, const void *b, size_t c);
-int		ft_ffs(int a);
-int		ft_ffsl(long a);
-int		ft_ffsll(long long a);
-int		ft_fls(int a);
-int		ft_flsl(long a);
-int		ft_flsll(long long a);
 int		ft_memcmp(const void *a, const void *b, size_t c);
-int		ft_strcasecmp(const char *a, const char *b);
+void	*ft_memchr(const void *a, int b, size_t c);
+void	*ft_memcpy(void *restrict a, const void *restrict b, size_t c);
+void	*ft_memmove(void *a, const void *b, size_t c);
+void	*ft_memset(void *a, int b, size_t c);
+
+char	*ft_strcpy(char *restrict a, const char *restrict b);
+char	*ft_strncpy(char *restrict a, const char *restrict b, size_t c);
+
+char	*ft_strcat(char *restrict a, const char *restrict b);
+char	*ft_strncat(char *restrict a, const char *restrict b, size_t c);
+
 int		ft_strcmp(const char *a, const char *b);
-int		ft_strncasecmp(const char *a, const char *b, size_t c);
 int		ft_strncmp(const char *a, const char *b, size_t c);
+
+size_t	ft_strxfrm(char *restrict a, const char *restrict b, size_t c);
+
+char	*ft_strchr(const char *a, int b);
+char	*ft_strrchr(const char *a, int b);
+
 size_t	ft_strcspn(const char *a, const char *b);
+size_t	ft_strspn(const char *a, const char *b);
+char	*ft_strpbrk(const char *a, const char *b);
+char	*ft_strstr(const char *a, const char *b);
+char	*ft_strtok(char *restrict a, const char *restrict b);
+
+size_t	ft_strlen(const char *a);
+
+
+# if defined(_BSD_SOURCE) || defined(_GNU_SOURCE)
+# include <ft_strings.h>
+# endif
+
+# if defined(_POSIX_SOURCE) || defined(_POSIX_C_SOURCE) || \
+	defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
+
+char	*ft_stpcpy(char *restrict a, const char *restrict b);
+char	*ft_stpncpy(char *restrict a, const char *restrict b, size_t c);
+char	*ft_strdup(const char *a);
+char	*ft_strndup(const char *a, size_t b);
+char	*ft_strtok_r(char *restrict a, const char *restrict b, char **restrict c);
+size_t	ft_strnlen(const char *a, size_t b);
+
+# endif
+
+# if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
+
+void	*ft_memccpy(void *restrict a, const void *restrict b, int c, size_t d);
+
+# endif
+
+# if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
+
+char	*ft_strnstr(const char *a, const char *b, size_t c);
+char	*ft_strsep(char **a, const char *b);
 size_t	ft_strlcat(char *a, const char *b, size_t c);
 size_t	ft_strlcpy(char *a, const char *b, size_t c);
-size_t	ft_strlen(const char *a);
-size_t	ft_strnlen(const char *a, size_t b);
-size_t	ft_strspn(const char *a, const char *b);
-size_t	ft_strxfrm(char *a, const char *b, size_t c);
-void	*ft_memccpy(void *a, const void *b, int c, size_t d);
-void	*ft_memchr(const void *a, int b, size_t c);
-void	*ft_memcpy(void *a, const void *b, size_t c);
-void	*ft_memmove(void *a, const void *b, size_t c);
+
+# endif
+
+# ifdef _GNU_SOURCE
+
+char	*ft_strcasestr(const char *a, const char *b);
+char	*ft_strchrnul(const char *a, int b);
 void	*ft_mempcpy(void *a, const void *b, size_t c);
 void	*ft_memrchr(const void *a, int b, size_t c);
-void	*ft_memset(void *a, int b, size_t c);
-void	ft_bcopy(const void *a, void *b, size_t c);
-void	ft_bzero(void *a, size_t b);
-void	ft_swab(const void *a, void *b, size_t c);
+
+# endif
 
 #endif

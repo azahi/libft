@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:29:41 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/13 20:23:56 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/04/08 09:15:11 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/04/08 10:00:39 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-void	ft_bzero(void *str, size_t size)
+char	*ft_index(const char *s, int c)
 {
-	ft_memset(str, '\0', size);
+	return (ft_strchr(s, c));
 }

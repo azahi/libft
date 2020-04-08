@@ -6,18 +6,14 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 19:43:05 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 21:12:20 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 09:25:28 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dst, const char *src)
-{
-	char	*str3;
+#include <ft_string.h>
 
-	str3 = dst;
-	while (*dst)
-		++dst;
-	while ((*dst++ = *src++))
-		;
-	return (str3);
+char	*ft_strcat(char *restrict dst, const char *restrict src)
+{
+	ft_strcpy(dst + ft_strlen(dst), src);
+	return (dst);
 }

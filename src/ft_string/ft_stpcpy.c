@@ -6,11 +6,11 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 03:10:23 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 03:14:17 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 09:26:05 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_stpcpy(char *dst, const char *src)
+char	*ft_stpcpy(char *restrict dst, const char *restrict src)
 {
 	while ((*dst++ = *src++))
 		;

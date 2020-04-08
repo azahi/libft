@@ -1,44 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swab.c                                          :+:      :+:    :+:   */
+/*   ft_memmem.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 00:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 17:07:47 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/04/08 09:18:58 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/04/08 09:21:21 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#define _GNU_SOURCE
 
-#define STEP tmp =*ts++,*td++ = *ts++,*td++ = tmp
+#include <ft_string.h>
 
-void	ft_swab(const void *src, void *dst, size_t size)
+/*
+** Placeholder function.
+*/
+
+void	*ft_memmem(const void *a, size_t b, const void *c, size_t d)
 {
-	char			*td;
-	char			*ts;
-	int				n;
-	unsigned long	tmp;
-
-	if (!size)
-		return ;
-	n = size >> 1;
-	ts = (char *)src;
-	td = (char *)dst;
-	while (n & 0x7)
-		STEP;
-	n >>= 3;
-	while (n > 0)
-	{
-		STEP;
-		STEP;
-		STEP;
-		STEP;
-		STEP;
-		STEP;
-		STEP;
-		STEP;
-		n--;
-	}
+	return (memmem(a, b, c, d));
 }

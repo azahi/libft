@@ -44,16 +44,6 @@ add_library(ft STATIC
         src/ft_stdlib/ft_putenv.c
         src/ft_stdlib/ft_setenv.c
         src/ft_stdlib/ft_unsetenv.c
-        src/ft_string/ft_bcmp.c
-        src/ft_string/ft_bcopy.c
-        src/ft_string/ft_bzero.c
-        src/ft_string/ft_ffs.c
-        src/ft_string/ft_ffsl.c
-        src/ft_string/ft_ffsll.c
-        src/ft_string/ft_fls.c
-        src/ft_string/ft_flsl.c
-        src/ft_string/ft_flsll.c
-        src/ft_string/ft_index.c
         src/ft_string/ft_memccpy.c
         src/ft_string/ft_memchr.c
         src/ft_string/ft_memcmp.c
@@ -62,10 +52,8 @@ add_library(ft STATIC
         src/ft_string/ft_mempcpy.c
         src/ft_string/ft_memrchr.c
         src/ft_string/ft_memset.c
-        src/ft_string/ft_rindex.c
         src/ft_string/ft_stpcpy.c
         src/ft_string/ft_stpncpy.c
-        src/ft_string/ft_strcasecmp.c
         src/ft_string/ft_strcasestr.c
         src/ft_string/ft_strcat.c
         src/ft_string/ft_strchr.c
@@ -77,7 +65,6 @@ add_library(ft STATIC
         src/ft_string/ft_strlcat.c
         src/ft_string/ft_strlcpy.c
         src/ft_string/ft_strlen.c
-        src/ft_string/ft_strncasecmp.c
         src/ft_string/ft_strncat.c
         src/ft_string/ft_strncmp.c
         src/ft_string/ft_strncpy.c
@@ -90,8 +77,21 @@ add_library(ft STATIC
         src/ft_string/ft_strspn.c
         src/ft_string/ft_strstr.c
         src/ft_string/ft_strtok.c
+        src/ft_string/ft_strtok_r.c
         src/ft_string/ft_strxfrm.c
-        src/ft_string/ft_swab.c
+        src/ft_strings/ft_bcmp.c
+        src/ft_strings/ft_bcopy.c
+        src/ft_strings/ft_bzero.c
+        src/ft_strings/ft_ffs.c
+        src/ft_strings/ft_ffsl.c
+        src/ft_strings/ft_ffsll.c
+        src/ft_strings/ft_fls.c
+        src/ft_strings/ft_flsl.c
+        src/ft_strings/ft_flsll.c
+        src/ft_strings/ft_index.c
+        src/ft_strings/ft_rindex.c
+        src/ft_strings/ft_strcasecmp.c
+        src/ft_strings/ft_strncasecmp.c
         src/ft_unistd/ft_execv.c
         src/ft_unistd/ft_execve.c
         src/ft_unistd/ft_execvp.c

@@ -6,13 +6,16 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 01:40:25 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/22 15:49:10 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 20:48:17 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_unistd.h>
 
 #ifdef __linux__
+
+# define _GNU_SOURCE
+
+# include <ft_unistd.h>
 # include <sys/syscall.h>
 
 int	ft_execve(const char *file, char *const argv[], char *const envp[])
@@ -21,6 +24,8 @@ int	ft_execve(const char *file, char *const argv[], char *const envp[])
 }
 
 #else
+
+# include <ft_unistd.h>
 
 int	ft_execve(const char *file, char *const argv[], char *const envp[])
 {

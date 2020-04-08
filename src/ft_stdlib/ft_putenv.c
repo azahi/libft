@@ -6,9 +6,11 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 12:54:08 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 10:45:25 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#define _GNU_SOURCE
 
 #include <ft_stdlib.h>
 #include <ft_string.h>

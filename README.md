@@ -13,14 +13,14 @@ This was done in order to make the project more readable and modifiable.
 ## Structure
 
 Functions are split between different headers:
-* _ft_ Miscellaneous functions [42 compatible]
-* _ft_ctype_ A rewrite of [ctype.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/ctype.h.html) [42 compatible]
-* _ft_stdio_ A rewrite of [stdio.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdio.h.html) __[Not 42 compatible]__
-* _ft_stdlib_ A rewrite of [stdlib.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdlib.h.html) [42 compatible]
-* _ft_string_ A rewrite of [string.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/string.h.html) [42 compatible]
-* _ft_unistd_ A rewrite of [unistd.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/unistd.h.html) [42 compatible]
+* _ft_ctype_ An implementation of [ctype.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/ctype.h.html)
+* _ft_stdlib_ An implementation of [stdlib.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/stdlib.h.html)
+* _ft_string_ An implementation of [string.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/string.h.html)
+* _ft_strings_ An implementation of [strings.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/strings.h.html)
+* _ft_unistd_ An implementation of [unistd.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/unistd.h.html)
+* _uio_ An extension of "useless" I/O operations to comply with 42's subjects
 
-All functions in headers that try to mimic the existing POSIX libc are written in accordance with [POSIX.1-2017](https://pubs.opengroup.org/onlinepubs/9699919799/) standard.
+I made an honest attempt to make everything that can conform to some kind of a official standard to conform to it.
 
 ## Building
 

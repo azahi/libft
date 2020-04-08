@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 14:28:26 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 20:18:23 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,40 @@
 
 # include <stdlib.h>
 
-char		*ft_getenv(const char *a);
+char		*ft_l64a(long a);
+long		ft_a64l(const char *a);
+
 div_t		ft_div(int a, int b);
-int			ft_abs(int a);
-int			ft_atoi(const char *a);
-int			ft_putenv(char *a);
-int			ft_setenv(const char *a, const char *b, int c);
-int			ft_unsetenv(const char *a);
 ldiv_t		ft_ldiv(long a, long b);
 lldiv_t		ft_lldiv(long a, long b);
-long		ft_a64l(const char *a);
+
+int			ft_atoi(const char *a);
 long		ft_atol(const char *a);
-long		ft_labs(long a);
 long long	ft_atoll(const char *a);
+
+int			ft_abs(int a);
+long		ft_labs(long a);
 long long	ft_llabs(long long a);
+
 void		*ft_calloc(size_t a, size_t b);
 void		*ft_malloc(size_t a);
-void		*ft_realloc(void *ptr, size_t size);
-void		ft_free(void *ptr);
+void		*ft_realloc(void *a, size_t b);
+void		ft_free(void *a);
 
-#endif
+char		*ft_getenv(const char *a);
+
+# if defined(_POSIX_SOURCE) || defined(_POSIX_C_SOURCE) || \
+	defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
+
+int			ft_setenv(const char *a, const char *b, int c);
+int			ft_unsetenv(const char *a);
+
+# endif
+
+# if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
+
+int			ft_putenv(char *a);
+
+# endif
+
+# endif

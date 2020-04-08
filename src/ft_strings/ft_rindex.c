@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:34:07 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 02:36:15 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/04/08 09:16:02 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/04/08 20:12:28 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-char	*ft_rindex(const char *str, int ch)
+char	*ft_rindex(const char *s, int c)
 {
-	return (ft_strrchr(str, ch));
+	return (ft_strrchr(s, c));
 }

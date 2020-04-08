@@ -6,25 +6,25 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 13:44:04 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:45:52 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 09:49:08 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-char	*ft_strtok(char *str, const char *sep)
+char	*ft_strtok(char *restrict str, const char *restrict sep)
 {
-	static char	*ts;
+	static char	*p;
 
-	if (!str && !(str = ts))
+	if (!str && !(str = p))
 		return (NULL);
 	str += ft_strspn(str, sep);
 	if (!*str)
-		return (ts = 0);
-	ts = str + ft_strcspn(str, sep);
-	if (*ts)
-		*ts++ = 0;
+		return (p = NULL);
+	p = str + ft_strcspn(str, sep);
+	if (*p)
+		*p++ = '\0';
 	else
-		ts = 0;
+		p = NULL;
 	return (str);
 }

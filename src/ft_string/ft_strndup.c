@@ -6,9 +6,11 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 18:09:04 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:20:37 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 20:45:33 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#define _GNU_SOURCE
 
 #include <ft_stdlib.h>
 #include <ft_string.h>
@@ -19,7 +21,7 @@ char	*ft_strndup(const char *str, size_t size)
 	size_t	ssize;
 
 	ssize = ft_strnlen(str, size);
-	if (!(copy = malloc(ssize + 1)))
+	if (!(copy = malloc(sizeof(*copy) * (ssize + 1))))
 		return (NULL);
 	ft_memcpy(copy, str, ssize);
 	copy[ssize] = '\0';

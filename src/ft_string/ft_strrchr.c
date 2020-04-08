@@ -6,23 +6,15 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 14:07:13 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/10/20 20:37:36 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 20:11:15 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#define _GNU_SOURCE
+
+#include <ft_string.h>
 
 char	*ft_strrchr(const char *str, int ch)
 {
-	char	*ts;
-
-	ts = NULL;
-	while (1)
-	{
-		if (*str == ch)
-			ts = (char *)str;
-		if (*str == '\0')
-			return (ts);
-		str++;
-	}
+	return (ft_memrchr(str, ch, ft_strlen(str) + 1));
 }

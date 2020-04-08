@@ -6,7 +6,7 @@
 /*   By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:05:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/22 15:59:23 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/08 20:57:25 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (0);
 	}
 	size *= nmemb;
-	if (!(ptr = ft_malloc(size)))
+	if (!(ptr = malloc(size)))
 		return (NULL);
 	return (ft_memset(ptr, 0, size));
 }

@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bcopy.c                                         :+:      :+:    :+:   */
+/*   ft_strtok_r.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 02:28:55 by jdeathlo          #+#    #+#             */
-/*   Updated: 2019/11/10 13:02:42 by jdeathlo         ###   ########.fr       */
+/*   Created: 2019/11/10 13:44:04 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/04/08 13:13:17 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-void	ft_bcopy(const void *str1, void *str2, size_t size)
+char	*ft_strtok_r(char *restrict str, const char *restrict sep,
+			char **restrict p)
 {
-	ft_memmove(str2, str1, size);
+	if (!str && !(str = *p))
+		return (NULL);
+	str += ft_strspn(str, sep);
+	if (!*str)
+		return (*p = NULL);
+	*p = str + ft_strcspn(str, sep);
+	if (**p)
+		*(*p)++ = '\0';
+	else
+		*p = NULL;
+	return (str);
 }

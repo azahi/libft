@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_bcmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 15:58:52 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 09:26:30 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/04/08 09:11:47 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/04/08 20:08:57 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#define _BSD_SOURCE
+#define _DEFAULT_SOURCE
+
 #include <ft_string.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t size)
+void	ft_bcmp(const void *s1, void *s2, size_t n)
 {
-	return (ft_memmove(dst, src, size));
+	ft_memmove(s2, s1, n);
 }
