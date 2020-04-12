@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 16:53:29 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 21:33:57 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/12 16:15:44 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ugetc(void)
 {
-	return(ufgetc(STDIN_FILENO));
+	return (ufgetc(STDIN_FILENO));
 }

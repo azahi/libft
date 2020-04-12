@@ -6,7 +6,7 @@
 #    By: jdeathlo <jdeathlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/03 19:48:19 by jdeathlo          #+#    #+#              #
-#    Updated: 2020/04/08 20:44:18 by jdeathlo         ###   ########.fr        #
+#    Updated: 2020/04/12 15:26:11 by jdeathlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ SRC += $(addprefix $(SRCDIR), \
 
 _SRCDIR_FT_STDLIB = ft_stdlib/
 _SRC_FT_STDLIB =	\
-	ft_a64l.c		\
 	ft_abs.c		\
 	ft_atoi.c		\
 	ft_atol.c		\
@@ -50,7 +49,6 @@ _SRC_FT_STDLIB =	\
 	ft_div.c		\
 	ft_free.c		\
 	ft_getenv.c		\
-	ft_l64a.c		\
 	ft_labs.c		\
 	ft_ldiv.c		\
 	ft_llabs.c		\

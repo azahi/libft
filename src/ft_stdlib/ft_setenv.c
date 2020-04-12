@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:47 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 21:24:35 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/12 16:31:30 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,7 @@
 #include <ft_stdlib.h>
 #include <ft_string.h>
 
-#include "__env.h"
-
-void		__env_rm_add(char *old, char *new)
-{
-	char			**tmp;
-	size_t			i;
-	static char		**env_alloced;
-	static size_t	env_alloced_n;
-
-	i = 0;
-	while (i < env_alloced_n)
-	{
-		if (env_alloced[i] == old && !env_alloced[i] && new)
-			env_alloced[i] = new;
-		if (env_alloced[i] == old)
-			return (free(old));
-		else if (!env_alloced[i] && new)
-			new = NULL;
-		i++;
-	}
-	if (!new || !(tmp = malloc(sizeof (*tmp) * (env_alloced_n + 1))))
-		return ;
-	ft_memcpy(tmp, env_alloced, sizeof (*tmp) * env_alloced_n);
-	free(env_alloced);
-	env_alloced = tmp;
-	tmp[env_alloced_n++] = new;
-}
+#include "internal_env.h"
 
 static int	einval(void)
 {
@@ -67,5 +41,5 @@ int			ft_setenv(const char *var, const char *value, int overwrite)
 	s[l1] = '=';
 	ft_memcpy(s + l1 + 1, value, l2 + 1);
 	return
-		(__putenv(s, l1, s));
+		(internal_putenv(s, l1, s));
 }

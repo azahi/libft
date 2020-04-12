@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:04:53 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 21:23:47 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/12 16:18:02 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 #include <ft_string.h>
 
-#include "../__environ.h"
-
 char	*ft_getenv(const char *name)
 {
-	size_t	l;
-	char	**e;
+	size_t		l;
+	char		**e;
+	extern char	**environ;
 
 	l = ft_strchrnul(name, '=') - name;
 	if (l && !name[l] && environ)

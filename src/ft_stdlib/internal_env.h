@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __environ.h                                        :+:      :+:    :+:   */
+/*   internal_env.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:08:48 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/03/30 17:58:53 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/12 16:22:22 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ENVIRON_H
-# define __ENVIRON_H
+#ifndef INTERNAL_ENV_H
+# define INTERNAL_ENV_H
 
-/*
-** Fuck norminette.
-*/
+# include <stddef.h>
 
-# define NORM_ENVIRON extern char **environ
-
-NORM_ENVIRON;
-
-# undef NORM_ENVIRON
+int		internal_putenv(char *a, size_t b, char *c);
+void	internal_env_rm_add(char *a, char *b);
 
 #endif

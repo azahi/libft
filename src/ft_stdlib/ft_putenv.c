@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 21:24:30 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/12 16:32:57 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 #include <ft_stdlib.h>
 #include <ft_string.h>
 
-#include "../__environ.h"
-#include "__env.h"
+#include "internal_env.h"
 
-int __putenv(char *s, size_t l, char *r)
+int internal_putenv(char *s, size_t l, char *r)
 {
-	size_t		i;
 	char		**e;
-	static char	**oldenv;
 	char		**newenv;
+	extern char	**environ;
+	size_t		i;
+	static char	**oldenv;
 
 	i = 0;
 	if (environ)
@@ -34,7 +34,7 @@ int __putenv(char *s, size_t l, char *r)
 			if (!ft_strncmp(s, *e, l + 1))
 			{
 				*e = s;
-				__env_rm_add(*e, r);
+				internal_env_rm_add(*e, r);
 				return (0);
 			}
 			e++;
@@ -51,7 +51,7 @@ int __putenv(char *s, size_t l, char *r)
 	newenv[i + 1] = NULL;
 	environ = oldenv = newenv;
 	if (r)
-		__env_rm_add(0, r);
+		internal_env_rm_add(NULL, r);
 	return (0);
 }
 
@@ -62,5 +62,5 @@ int	ft_putenv(char *s)
 	l = ft_strchrnul(s, '=') - s;
 	if (!l || !s[l])
 		return (ft_unsetenv(s));
-	return (__putenv(s, l, 0));
+	return (internal_putenv(s, l, 0));
 }

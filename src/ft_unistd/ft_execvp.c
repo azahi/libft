@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 01:22:38 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 20:12:50 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/12 15:07:17 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@
 #include <limits.h>
 #include <stddef.h>
 
-#include "../__environ.h"
-
 int	ft_execvp(const char *file, char *const argv[])
 {
 	const char	*p;
 	const char	*path = ft_getenv("PATH");
 	const char	*z;
+	extern char	**environ;
 	int			seen_eacces = 0;
 	size_t		k;
 	size_t		l;

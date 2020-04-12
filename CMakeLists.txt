@@ -28,7 +28,6 @@ add_library(ft STATIC
         src/ft_ctype/ft_isxdigit.c
         src/ft_ctype/ft_tolower.c
         src/ft_ctype/ft_toupper.c
-        src/ft_stdlib/ft_a64l.c
         src/ft_stdlib/ft_abs.c
         src/ft_stdlib/ft_atoi.c
         src/ft_stdlib/ft_atol.c
@@ -36,7 +35,6 @@ add_library(ft STATIC
         src/ft_stdlib/ft_calloc.c
         src/ft_stdlib/ft_div.c
         src/ft_stdlib/ft_getenv.c
-        src/ft_stdlib/ft_l64a.c
         src/ft_stdlib/ft_labs.c
         src/ft_stdlib/ft_ldiv.c
         src/ft_stdlib/ft_llabs.c

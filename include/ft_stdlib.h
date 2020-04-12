@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 20:18:23 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/12 15:25:56 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define FT_STDLIB_H
 
 # include <stdlib.h>
-
-char		*ft_l64a(long a);
-long		ft_a64l(const char *a);
 
 div_t		ft_div(int a, int b);
 ldiv_t		ft_ldiv(long a, long b);
