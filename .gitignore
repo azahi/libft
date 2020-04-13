@@ -1,5 +1,4 @@
 *.a
-*.o
 /build/
 /cmake/
 CMakeCache.txt
