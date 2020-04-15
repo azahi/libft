@@ -6,17 +6,15 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 13:06:45 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 10:19:14 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/15 18:25:45 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#ifndef UIO_H
+# define UIO_H
 
-# ifndef NO_FTLIB_SPECIFIC
-
-#  include <sys/types.h>
-#  include <unistd.h>
+# include <sys/types.h>
+# include <unistd.h>
 
 typedef const int	t_fd;
 
@@ -36,7 +34,5 @@ void				ufputn(t_fd a, int b);
 void				ufputnn(t_fd a, int b);
 void				uputn(int a);
 void				uputnn(int a);
-
-# endif
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/07 13:27:34 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/15 18:28:46 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int		g_optind;
 int		g_optopt;
 int		g_optreset;
 
-int	ft_execv(const char *a, char *const b[]);
-int	ft_execve(const char *a, char *const b[], char *const c[]);
-int	ft_execvp(const char *a, char *const b[]);
+int		ft_execv(const char *a, char *const b[]);
+int		ft_execve(const char *a, char *const b[], char *const c[]);
+int		ft_execvp(const char *a, char *const b[]);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/12 19:15:55 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/15 18:30:48 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,13 @@ void		ft_free(void *a);
 
 char		*ft_getenv(const char *a);
 
-# if defined(_POSIX_SOURCE) || defined(_POSIX_C_SOURCE) || \
-	defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
+# if defined(_POSIX_SOURCE) || defined(_POSIX_C_SOURCE)
+#  if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 
 int			ft_setenv(const char *a, const char *b, int c);
 int			ft_unsetenv(const char *a);
 
+#  endif
 # endif
 
 # if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
@@ -47,5 +48,4 @@ int			ft_unsetenv(const char *a);
 int			ft_putenv(char *a);
 
 # endif
-
-# endif
+#endif
