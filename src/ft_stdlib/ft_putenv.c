@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/12 16:32:57 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/15 18:37:11 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "internal_env.h"
 
-int internal_putenv(char *s, size_t l, char *r)
+int	internal_putenv(char *s, size_t l, char *r)
 {
 	char		**e;
 	char		**newenv;
@@ -41,15 +41,16 @@ int internal_putenv(char *s, size_t l, char *r)
 			i++;
 		}
 	}
-	if (!(newenv = malloc(sizeof *newenv * (i + 2))))
+	if (!(newenv = ft_malloc(sizeof(*newenv) * (i + 2))))
 		return (-1);
 	if (i)
-		ft_memcpy(newenv, environ, sizeof *newenv * i);
+		ft_memcpy(newenv, environ, sizeof(*newenv) * i);
 	if (environ != oldenv)
-		free(oldenv);
+		ft_free(oldenv);
 	newenv[i] = s;
 	newenv[i + 1] = NULL;
-	environ = oldenv = newenv;
+	oldenv = newenv;
+	environ = newenv;
 	if (r)
 		internal_env_rm_add(NULL, r);
 	return (0);

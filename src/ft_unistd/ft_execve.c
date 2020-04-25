@@ -6,13 +6,13 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 01:40:25 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/12 16:13:52 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/15 18:50:01 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# define _GNU_SOURCE
+#define _GNU_SOURCE
 
-# include <ft_unistd.h>
+#include <ft_unistd.h>
 
 #ifdef __linux__
 

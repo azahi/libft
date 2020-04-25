@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:48 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/12 16:32:28 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/15 18:39:17 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void		internal_env_rm_add(char *old, char *new)
 			new = NULL;
 		i++;
 	}
-	if (!new || !(tmp = malloc(sizeof (*tmp) * (env_alloced_n + 1))))
+	if (!new || !(tmp = ft_malloc(sizeof(*tmp) * (env_alloced_n + 1))))
 		return ;
-	ft_memcpy(tmp, env_alloced, sizeof (*tmp) * env_alloced_n);
+	ft_memcpy(tmp, env_alloced, sizeof(*tmp) * env_alloced_n);
 	free(env_alloced);
 	env_alloced = tmp;
 	tmp[env_alloced_n++] = new;

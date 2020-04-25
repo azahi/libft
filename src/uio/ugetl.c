@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/19 20:11:29 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/12 15:15:37 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/15 18:41:21 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ ssize_t	ugetl(char **restrict lineptr)
 				return (-1);
 			ft_strcat(tmp, *lineptr);
 			ft_strcat(tmp, buf);
-			free(*lineptr);
+			ft_free(*lineptr);
 			*lineptr = tmp;
 		}
 		if (flag)
