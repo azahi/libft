@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 18:09:04 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/08 21:19:34 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/27 13:35:17 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strndup(const char *str, size_t size)
 	size_t	ssize;
 
 	ssize = ft_strnlen(str, size);
-	if (!(copy = malloc(sizeof(*copy) * (ssize + 1))))
+	if (!(copy = malloc(sizeof *copy * (ssize + 1))))
 		return (NULL);
 	ft_memcpy(copy, str, ssize);
 	copy[ssize] = '\0';

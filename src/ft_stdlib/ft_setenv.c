@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:47 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/15 18:43:29 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/27 13:35:46 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int			ft_setenv(const char *var, const char *value, int overwrite)
 	if (!overwrite && ft_getenv(var))
 		return (0);
 	l2 = ft_strlen(value);
-	if (!(s = ft_malloc(sizeof(*s) * (l1 + l2 + 2))))
+	if (!(s = ft_malloc(sizeof *s * (l1 + l2 + 2))))
 		return (-1);
 	ft_memcpy(s, var, l1);
 	s[l1] = '=';

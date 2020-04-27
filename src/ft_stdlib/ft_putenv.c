@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/15 18:37:11 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/04/27 13:36:02 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	internal_putenv(char *s, size_t l, char *r)
 			i++;
 		}
 	}
-	if (!(newenv = ft_malloc(sizeof(*newenv) * (i + 2))))
+	if (!(newenv = ft_malloc(sizeof *newenv * (i + 2))))
 		return (-1);
 	if (i)
-		ft_memcpy(newenv, environ, sizeof(*newenv) * i);
+		ft_memcpy(newenv, environ, sizeof *newenv * i);
 	if (environ != oldenv)
 		ft_free(oldenv);
 	newenv[i] = s;
