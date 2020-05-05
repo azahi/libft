@@ -33,6 +33,7 @@ add_library(ft STATIC
         src/ft_stdlib/ft_atol.c
         src/ft_stdlib/ft_atoll.c
         src/ft_stdlib/ft_calloc.c
+        src/ft_stdlib/ft_clearenv.c
         src/ft_stdlib/ft_div.c
         src/ft_stdlib/ft_getenv.c
         src/ft_stdlib/ft_labs.c

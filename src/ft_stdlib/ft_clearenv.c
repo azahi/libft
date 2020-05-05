@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_clearenv.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/07 18:09:04 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/05/05 20:33:55 by jdeathlo         ###   ########.fr       */
+/*   Created: 2020/05/05 18:15:09 by jdeathlo          #+#    #+#             */
+/*   Updated: 2020/05/05 18:50:29 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define _GNU_SOURCE
-
 #include <ft_stdlib.h>
-#include <ft_string.h>
+#include <ft_unistd.h>
 
-char	*ft_strndup(const char *str, size_t size)
+#include "internal_env.h"
+
+int	ft_clearenv(void)
 {
-	char	*copy;
-	size_t	ssize;
+	char		**e;
+	extern char	**environ;
 
-	ssize = ft_strnlen(str, size);
-	if (!(copy = malloc(sizeof(*copy) * (ssize + 1))))
-		return (NULL);
-	ft_memcpy(copy, str, ssize);
-	copy[ssize] = '\0';
-	return (copy);
+	e = environ;
+	environ = NULL;
+	if (e)
+		while (*e)
+			internal_env_rm_add(*e++, NULL);
+	return (0);
 }

@@ -4,6 +4,7 @@ SOURCES := \
 	ft_atol.c \
 	ft_atoll.c \
 	ft_calloc.c \
+	ft_clearenv.c \
 	ft_div.c \
 	ft_free.c \
 	ft_getenv.c \

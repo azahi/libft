@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:48 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/27 13:35:34 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/05 20:37:02 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,7 @@
 
 #include "internal_env.h"
 
-void		internal_env_rm_add(char *old, char *new)
-{
-	char			**tmp;
-	size_t			i;
-	static char		**env_alloced;
-	static size_t	env_alloced_n;
-
-	i = 0;
-	while (i < env_alloced_n)
-	{
-		if (env_alloced[i] == old && !env_alloced[i] && new)
-			env_alloced[i] = new;
-		if (env_alloced[i] == old)
-			return (free(old));
-		else if (!env_alloced[i] && new)
-			new = NULL;
-		i++;
-	}
-	if (!new || !(tmp = ft_malloc(sizeof *tmp * (env_alloced_n + 1))))
-		return ;
-	ft_memcpy(tmp, env_alloced, sizeof *tmp * env_alloced_n);
-	free(env_alloced);
-	env_alloced = tmp;
-	tmp[env_alloced_n++] = new;
-}
-
-static int	einval(void)
+int			internal_einval(void)
 {
 	errno = EINVAL;
 	return (-1);
@@ -54,11 +28,12 @@ int			ft_unsetenv(const char *name)
 {
 	char		**e;
 	char		**eo;
-	extern char	**environ;
+	extern char **environ;
 	size_t		l;
 
-	if (!(l = ft_strchrnul(name, '=') - name) || name[l])
-		return (einval());
+	l = ft_strchrnul(name, '=') - name;
+	if (!l || name[l])
+		return (internal_einval());
 	if (environ)
 	{
 		e = environ;

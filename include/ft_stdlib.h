@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:14:03 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/15 18:30:48 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/05 20:30:56 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ int			ft_unsetenv(const char *a);
 # if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 
 int			ft_putenv(char *a);
+
+# endif
+
+# if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
+
+int			ft_clearenv(void);
 
 # endif
 #endif

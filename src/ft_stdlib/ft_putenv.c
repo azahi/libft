@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/27 13:36:02 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/05 20:33:12 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	internal_putenv(char *s, size_t l, char *r)
 {
 	char		**e;
 	char		**newenv;
+	char		*tmp;
 	extern char	**environ;
 	size_t		i;
 	static char	**oldenv;
@@ -33,26 +34,41 @@ int	internal_putenv(char *s, size_t l, char *r)
 		{
 			if (!ft_strncmp(s, *e, l + 1))
 			{
+				tmp = *e;
 				*e = s;
-				internal_env_rm_add(*e, r);
+				internal_env_rm_add(tmp, r);
 				return (0);
 			}
 			e++;
 			i++;
 		}
 	}
-	if (!(newenv = ft_malloc(sizeof *newenv * (i + 2))))
-		return (-1);
-	if (i)
-		ft_memcpy(newenv, environ, sizeof *newenv * i);
-	if (environ != oldenv)
+	if (environ == oldenv)
+	{
+		newenv = ft_realloc(oldenv, sizeof(*newenv) * (i + 2));
+		if (!newenv)
+		{
+			ft_free(r);
+			return (-1);
+		}
+	}
+	else
+	{
+		newenv = ft_malloc(sizeof(*newenv) * (i + 2));
+		if (!newenv)
+		{
+			ft_free(r);
+			return (-1);
+		}
+		if (i)
+			ft_memcpy(newenv, environ, sizeof(*newenv) * i);
 		ft_free(oldenv);
+	}
 	newenv[i] = s;
 	newenv[i + 1] = NULL;
-	oldenv = newenv;
-	environ = newenv;
+	environ = oldenv = newenv;
 	if (r)
-		internal_env_rm_add(NULL, r);
+		internal_env_rm_add(0, r);
 	return (0);
 }
 
