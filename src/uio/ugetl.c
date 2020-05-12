@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/19 20:11:29 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/05/12 11:57:15 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/12 16:37:51 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,31 @@
 #include <ft_string.h>
 #include <ft_unistd.h>
 
-#define UGETL_BUFFER 32
+#define UGETL_BUFFER 1024
 
-ssize_t	ugetl(char **restrict lineptr)
+static int	buildstr(char **restrict lineptr, const char buf[], size_t size)
+{
+	char	*tmp;
+
+	if (!*lineptr)
+	{
+		if (!(*lineptr = ft_strdup(buf)))
+			return (-1);
+	}
+	else
+	{
+		if (!(tmp = ft_malloc(sizeof(*tmp) * (ft_strlen(*lineptr) + size))))
+			return (-1);
+		ft_strcat(tmp, *lineptr);
+		ft_free(*lineptr);
+		ft_strcat(tmp, buf);
+		*lineptr = tmp;
+		return (0);
+	}
+	return (0);
+}
+
+ssize_t		ugetl(char **restrict lineptr)
 {
 	char	*tmp;
 	char	buf[UGETL_BUFFER + 1];
@@ -37,22 +59,8 @@ ssize_t	ugetl(char **restrict lineptr)
 		}
 		buf[size] = '\0';
 		size_final += size;
-		if (!*lineptr)
-		{
-			*lineptr = ft_strdup(buf);
-			if (!*lineptr)
-				return (-1);
-		}
-		else
-		{
-			tmp = ft_malloc(sizeof(*tmp) * ft_strlen(*lineptr) + size);
-			if (!tmp)
-				return (-1);
-			ft_strcat(tmp, *lineptr);
-			ft_strcat(tmp, buf);
-			ft_free(*lineptr);
-			*lineptr = tmp;
-		}
+		if (buildstr(lineptr, buf, size) == -1)
+			return (-1);
 		if (flag)
 			break ;
 	}
