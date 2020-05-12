@@ -35,12 +35,15 @@ add_library(ft STATIC
         src/ft_stdlib/ft_calloc.c
         src/ft_stdlib/ft_clearenv.c
         src/ft_stdlib/ft_div.c
+        src/ft_stdlib/ft_free.c
         src/ft_stdlib/ft_getenv.c
         src/ft_stdlib/ft_labs.c
         src/ft_stdlib/ft_ldiv.c
         src/ft_stdlib/ft_llabs.c
         src/ft_stdlib/ft_lldiv.c
+        src/ft_stdlib/ft_malloc.c
         src/ft_stdlib/ft_putenv.c
+        src/ft_stdlib/ft_realloc.c
         src/ft_stdlib/ft_setenv.c
         src/ft_stdlib/ft_unsetenv.c
         src/ft_string/ft_memccpy.c

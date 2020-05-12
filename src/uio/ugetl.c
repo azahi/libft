@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/19 20:11:29 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/05/05 20:58:13 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/12 11:57:15 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ ssize_t	ugetl(char **restrict lineptr)
 		}
 		else
 		{
-			tmp = ft_calloc(sizeof(*tmp), ft_strlen(*lineptr) + size);
+			tmp = ft_malloc(sizeof(*tmp) * ft_strlen(*lineptr) + size);
 			if (!tmp)
 				return (-1);
 			ft_strcat(tmp, *lineptr);
