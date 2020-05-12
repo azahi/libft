@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:48 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/05/05 20:37:02 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/12 12:01:40 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ int			ft_unsetenv(const char *name)
 	l = ft_strchrnul(name, '=') - name;
 	if (!l || name[l])
 		return (internal_einval());
-	if (environ)
+	if ((e = environ))
 	{
-		e = environ;
 		eo = e;
 		while (*e)
 		{

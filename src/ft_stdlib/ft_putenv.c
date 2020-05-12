@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:46 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/05/05 20:33:12 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/12 12:28:59 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ int	internal_putenv(char *s, size_t l, char *r)
 	static char	**oldenv;
 
 	i = 0;
-	if (environ)
-	{
-		e = environ;
+	if ((e = environ))
 		while (*e)
 		{
 			if (!ft_strncmp(s, *e, l + 1))
@@ -42,28 +40,14 @@ int	internal_putenv(char *s, size_t l, char *r)
 			e++;
 			i++;
 		}
-	}
-	if (environ == oldenv)
+	if (!(newenv = ft_malloc(sizeof(*newenv) * (i + 2))))
 	{
-		newenv = ft_realloc(oldenv, sizeof(*newenv) * (i + 2));
-		if (!newenv)
-		{
-			ft_free(r);
-			return (-1);
-		}
+		ft_free(r);
+		return (-1);
 	}
-	else
-	{
-		newenv = ft_malloc(sizeof(*newenv) * (i + 2));
-		if (!newenv)
-		{
-			ft_free(r);
-			return (-1);
-		}
-		if (i)
-			ft_memcpy(newenv, environ, sizeof(*newenv) * i);
-		ft_free(oldenv);
-	}
+	if (i)
+		ft_memcpy(newenv, environ, sizeof(*newenv) * i);
+	ft_free(oldenv);
 	newenv[i] = s;
 	newenv[i + 1] = NULL;
 	environ = oldenv = newenv;

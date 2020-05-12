@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 12:14:47 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/05/05 20:32:58 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/12 12:32:04 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,26 @@ void		internal_env_rm_add(char *old, char *new)
 	static char		**env_alloced;
 	static size_t	env_alloced_n;
 
-	i = 0;
-	while (i < env_alloced_n)
+	i = -1;
+	while (++i < env_alloced_n)
 	{
 		if (env_alloced[i] == old)
 		{
 			env_alloced[i] = new;
-			ft_free(old);
-			return ;
+			return (ft_free(old));
 		}
 		else if (!env_alloced[i] && new)
 		{
 			env_alloced[i] = new;
 			new = NULL;
 		}
-		i++;
 	}
-	if (!new)
+	if (!new || !(t = ft_malloc(sizeof(*t) * (env_alloced_n + 1))))
 		return ;
-	t = ft_realloc(env_alloced, sizeof(*t) * (env_alloced_n + 1));
-	if (!t)
-		return ;
-	(env_alloced = t)[env_alloced_n++] = new;
+	ft_memcpy(t, env_alloced, sizeof(*t) * env_alloced_n);
+	ft_free(env_alloced);
+	t[env_alloced_n++] = new;
+	env_alloced = t;
 }
 
 int			ft_setenv(const char *var, const char *value, int overwrite)
