@@ -6,7 +6,7 @@
 /*   By: jdeathlo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:50:08 by jdeathlo          #+#    #+#             */
-/*   Updated: 2020/04/15 18:28:46 by jdeathlo         ###   ########.fr       */
+/*   Updated: 2020/05/14 14:04:58 by jdeathlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 # include <unistd.h>
 
-int		ft_getopt(int a, char *const *b, const char *c);
+int			ft_getopt(int a, char *const *b, const char *c);
 
-char	*g_optarg;
-int		g_opterr;
-int		g_optind;
-int		g_optopt;
-int		g_optreset;
+extern char	*g_optarg;
+extern int	g_opterr;
+extern int	g_optind;
+extern int	g_optopt;
+extern int	g_optreset;
 
-int		ft_execv(const char *a, char *const b[]);
-int		ft_execve(const char *a, char *const b[], char *const c[]);
-int		ft_execvp(const char *a, char *const b[]);
+int			ft_execv(const char *a, char *const b[]);
+int			ft_execve(const char *a, char *const b[], char *const c[]);
+int			ft_execvp(const char *a, char *const b[]);
 
 #endif
