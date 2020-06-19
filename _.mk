@@ -5,11 +5,6 @@ ifdef DEBUG_ASAN
     TGT_CFLAGS += -fsanitize=address -fsanitize-address-use-after-scope
 endif
 
-ifdef DEBUG_UBSAN
-    DEBUG      := 1
-    TGT_CFLAGS += -fsanitize=undefined
-endif
-
 ifdef DEBUG
     TGT_CFLAGS += -O0 -g -fno-omit-frame-pointer -fno-optimize-sibling-calls
 else
